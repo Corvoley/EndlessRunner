@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     private bool CanJump => !IsJumping;
     private bool CanRoll => !IsRolling;
 
+    public float TravelledDistance => Vector3.Distance(transform.position, initialPosition);
+
     void Awake()
     {
         initialPosition = transform.position;

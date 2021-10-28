@@ -61,16 +61,37 @@
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerAnimationController.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\Obstacle.cs" />
     <Compile Include="Assets\Runtime\Scripts\Animation\WaitGameStartAnimationState.cs" />
-    <Compile Include="Assets\Runtime\Scripts\Level\EndlessTrackGenerator.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\ObstacleSpawner.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\WorldCurver.cs" />
     <Compile Include="Assets\Runtime\Scripts\Animation\StartRunAnimationState.cs" />
     <Compile Include="Assets\Runtime\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerCollision.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\TrackSegment.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerAnimationConstants.cs" />
     <Compile Include="Assets\Runtime\Scripts\Animation\RollAnimationState.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\EndlessTrackGenerator.cs" />
     <Compile Include="Assets\Runtime\Scripts\Animation\JumpAnimationState.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Runtime\Scripts\Core\GameTags.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\DecorationSpawner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Runtime\Shaders\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Runtime\Shaders\ToonShading\Shaders\ToonLit.cginc" />
+    <None Include="Assets\Runtime\Shaders\CurvedUnlitCloud.shader" />
+    <None Include="Assets\Runtime\Shaders\CurvedOutlineCloud.shader" />
+    <None Include="Assets\Runtime\Shaders\CurvedOutline.shader" />
+    <None Include="Assets\Runtime\Shaders\CurvedCodeUtils.cginc" />
+    <None Include="Assets\Runtime\Shaders\CurvedUnlit.shader" />
+    <None Include="Assets\Runtime\Shaders\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Runtime\Shaders\VertexColor.shader" />
+    <None Include="Assets\Runtime\Shaders\CurvedUnlitAlpha.shader" />
+    <None Include="Assets\Runtime\Shaders\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Runtime\Shaders\CurvedCode.cginc" />
+    <None Include="Assets\Runtime\Shaders\UnlitExample.shader" />
+    <None Include="Assets\Runtime\Shaders\CurvedRotation.shader" />
+    <None Include="Assets\Runtime\Shaders\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Runtime\Shaders\UnlitBlinking.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
