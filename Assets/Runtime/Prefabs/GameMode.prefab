@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadGameDelay: 3
+  MainHUD: {fileID: 0}
+  PauseHUD: {fileID: 0}
 --- !u!114 &7907498206307116638
 MonoBehaviour:
   m_ObjectHideFlags: 0

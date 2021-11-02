@@ -4,48 +4,46 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Moviment")]
     [SerializeField] private float horizontalSpeed = 15;
     [SerializeField] private float forwardSpeed = 10;
-
     [SerializeField] private float laneDistanceX = 4;
+    Vector3 initialPosition;
+    float targetPositionX;
+    private float LeftLaneX => initialPosition.x - laneDistanceX;
+    private float RightLaneX => initialPosition.x + laneDistanceX;
 
     [Header("Jump")]
     [SerializeField] private float jumpDistanceZ = 5;
     [SerializeField] private float jumpHeightY = 2;
-
     [SerializeField] private float jumpLerpSpeed = 10;
+    public bool IsJumping { get; private set; }
+    public float JumpDuration => jumpDistanceZ / forwardSpeed;
+    private bool CanJump => !IsJumping;
+    float jumpStartZ;
 
     [Header("Roll")]
 
     [SerializeField] private float rollDistanceZ = 5;
     [SerializeField] private Collider regularCollider;
     [SerializeField] private Collider rollCollider;
-
-
-    Vector3 initialPosition;
-
-    float targetPositionX;
-
-    public bool IsJumping { get; private set; }
-
-    private float rollStartZ;
     public bool IsRolling { get; private set; }
-
-    public float JumpDuration => jumpDistanceZ / forwardSpeed;
-
     public float RollDuration => rollDistanceZ / forwardSpeed;
-    float jumpStartZ;
-
-    private float LeftLaneX => initialPosition.x - laneDistanceX;
-    private float RightLaneX => initialPosition.x + laneDistanceX;
-
-    private bool CanJump => !IsJumping;
     private bool CanRoll => !IsRolling;
+    private float rollStartZ;
 
-    public float TravelledDistance => Vector3.Distance(transform.position, initialPosition);
+    
+    public float TotalDistanceZ => transform.position.z - initialPosition.z;
 
+    //TODO: Move to GameMode
+    [SerializeField] private float baseScoreMultiplier = 1;
+    private float score;
+    public int Score => Mathf.RoundToInt(score);
+
+    //
     void Awake()
     {
+        this.enabled = false;
         initialPosition = transform.position;
         StopRoll();
     }
@@ -62,6 +60,10 @@ public class PlayerController : MonoBehaviour
         ProcessRoll();
 
         transform.position = position;
+
+        //TODO: move to game mode
+        score += baseScoreMultiplier * forwardSpeed * Time.deltaTime;
+        
     }
 
     private void ProcessInput()
