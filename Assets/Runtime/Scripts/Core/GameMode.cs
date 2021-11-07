@@ -9,7 +9,23 @@ public class GameMode : MonoBehaviour
     [SerializeField] private PlayerController player;
     [SerializeField] private PlayerAnimationController playerAnimationController;
     [SerializeField] private MainHUD mainHUD;
+    [SerializeField] private MusicPlayer musicPlayer;
+
     [SerializeField] private int startGameCountdown = 5;
+
+
+    private void Awake()
+    {
+        SetWwaitForStartGameState();
+    }
+
+    private void SetWwaitForStartGameState()
+    {
+        player.enabled = false;
+        mainHUD.ShowStartOverlay();
+        musicPlayer.PlayStartMenuMusic();
+    }
+
     public void OnGameOver()
     {
         StartCoroutine(ReloadGameCoroutine());
@@ -17,7 +33,8 @@ public class GameMode : MonoBehaviour
 
     private IEnumerator ReloadGameCoroutine()
     {
-        //esperar uma frame
+        yield return new WaitForSeconds(1);
+        musicPlayer.PlayDeathTrackMusic();
         yield return new WaitForSeconds(reloadGameDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -38,6 +55,7 @@ public class GameMode : MonoBehaviour
 
     private IEnumerator StartGameCor()
     {
+        musicPlayer.PlayMainTrackMusic();
         yield return StartCoroutine(mainHUD.PlayStartGameCountdown(startGameCountdown));
         playerAnimationController.PlayGameAnimationStart();
     }

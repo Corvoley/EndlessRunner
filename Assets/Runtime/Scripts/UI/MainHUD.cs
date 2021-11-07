@@ -13,6 +13,7 @@ public class MainHUD : MonoBehaviour
     [SerializeField] private GameObject resumeHUD;
     [SerializeField] private GameObject pauseHUD;
     [SerializeField] private GameObject startHUD;
+    [SerializeField] private UiAudioController audioController;
     
 
     private void Awake()
@@ -34,7 +35,7 @@ public class MainHUD : MonoBehaviour
     public void ResumeGame()
     {
         gameMode.ResumeGame();
-        ShowHudOverlay();        
+        ShowHudOverlay();
     }
 
     public void ShowHudOverlay()
@@ -68,6 +69,8 @@ public class MainHUD : MonoBehaviour
         float timeToStart = Time.time + countdownSeconds;
         yield return null;
         countdownText.gameObject.SetActive(true);
+        int lastRemainingTime = 0;
+        bool alreadyEndSound = false;
         while (Time.time <= timeToStart)
         {
             float remainingTime = timeToStart - Time.time;
@@ -76,8 +79,20 @@ public class MainHUD : MonoBehaviour
 
             float percent = remainingTime - remainingTimeInt;
             countdownText.transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, percent);
+            if (remainingTimeInt  != lastRemainingTime && remainingTimeInt > 0)
+            {
+                audioController.PlayCountdownSound();
+                lastRemainingTime = remainingTimeInt;
+            }
+            else if (remainingTimeInt == 0 && !alreadyEndSound)
+            {
+                audioController.PlayCountdownEndSound();
+                alreadyEndSound = true;
+            }
+
             yield return null;
         }
+
         countdownText.gameObject.SetActive(false);
     }
 
