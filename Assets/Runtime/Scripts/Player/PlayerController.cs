@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Moviment")]
     [SerializeField] private float horizontalSpeed = 15;
-    [SerializeField] private float forwardSpeed = 10;
+    [SerializeField] public float ForwardSpeed { get; set; } = 10;
     [SerializeField] private float laneDistanceX = 4;
     Vector3 initialPosition;
     float targetPositionX;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpHeightY = 2;
     [SerializeField] private float jumpLerpSpeed = 10;
     public bool IsJumping { get; private set; }
-    public float JumpDuration => jumpDistanceZ / forwardSpeed;
+    public float JumpDuration => jumpDistanceZ / ForwardSpeed;
     private bool CanJump => !IsJumping;
     float jumpStartZ;
 
@@ -30,19 +30,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Collider regularCollider;
     [SerializeField] private Collider rollCollider;
     public bool IsRolling { get; private set; }
-    public float RollDuration => rollDistanceZ / forwardSpeed;
+    public float RollDuration => rollDistanceZ / ForwardSpeed;
     private bool CanRoll => !IsRolling;
     private float rollStartZ;
 
-    
     public float TotalDistanceZ => transform.position.z - initialPosition.z;
-
-    //TODO: Move to GameMode
-    [SerializeField] private float baseScoreMultiplier = 1;
-    private float score;
-    public int Score => Mathf.RoundToInt(score);
-
-    //
     void Awake()
     {        
         initialPosition = transform.position;
@@ -62,9 +54,6 @@ public class PlayerController : MonoBehaviour
 
         transform.position = position;
 
-        //TODO: move to game mode
-        score += baseScoreMultiplier * forwardSpeed * Time.deltaTime;
-        
     }
 
     private void ProcessInput()
@@ -96,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     private float ProcessForwardMovement()
     {
-        return transform.position.z + forwardSpeed * Time.deltaTime;
+        return transform.position.z + ForwardSpeed * Time.deltaTime;
     }
 
     private void StartJump()
@@ -164,7 +153,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        forwardSpeed = 0;
+        ForwardSpeed = 0;
+        this.enabled = false;
         StopRoll();
         StopJump();
     }

@@ -9,6 +9,7 @@ public class MainHUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI distanceText;
     [SerializeField] private TextMeshProUGUI countdownText;
+    [SerializeField] private TextMeshProUGUI cherriesText;
     [SerializeField] private GameMode gameMode;
     [SerializeField] private GameObject resumeHUD;
     [SerializeField] private GameObject pauseHUD;
@@ -22,8 +23,9 @@ public class MainHUD : MonoBehaviour
     }
     private void LateUpdate()
     {
-        scoreText.text = $"Score: {player.Score}";
-        distanceText.text = $"{Mathf.RoundToInt(player.TotalDistanceZ)}m";  
+        scoreText.text = $"Score: {gameMode.Score}";
+        distanceText.text = $"{Mathf.RoundToInt(player.TotalDistanceZ)}m";
+        cherriesText.text = $"{gameMode.CherriesCount}";
     }
 
 

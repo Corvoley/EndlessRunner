@@ -26,5 +26,14 @@ public class PlayerCollision : MonoBehaviour
             gameMode.OnGameOver();
             obstacle.PlayCollisionFeedback(other);
         }
+
+        Collectable collectable = other.GetComponent<Collectable>();
+        if (collectable != null)
+        {            
+            collectable.PlayPickupSound();            
+            gameMode.IncreaseCherriesCount();
+            Destroy(other.gameObject, 10 * Time.deltaTime);
+        }
+
     }
 }

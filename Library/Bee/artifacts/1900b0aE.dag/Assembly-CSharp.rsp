@@ -324,7 +324,6 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Runtime/Scripts/Animation/JumpAnimationState.cs"
 "Assets/Runtime/Scripts/Animation/RollAnimationState.cs"
-"Assets/Runtime/Scripts/Animation/StartRunAnimationState.cs"
 "Assets/Runtime/Scripts/Audio/AudioUtility.cs"
 "Assets/Runtime/Scripts/Audio/MusicPlayer.cs"
 "Assets/Runtime/Scripts/Camera/CameraFollow.cs"

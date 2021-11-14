@@ -23,6 +23,7 @@ public class EndlessTrackGenerator : MonoBehaviour
     [SerializeField] private int maxTracksBeforeReward = 20;
     [SerializeField] private int minRewardTrackCount = 1;
     [SerializeField] private int maxRewardTrackCount = 3;
+        
 
     private List<TrackSegment> currentSegments = new List<TrackSegment>();
 
@@ -41,6 +42,10 @@ public class EndlessTrackGenerator : MonoBehaviour
     {
         UpdateTracks();
     }
+
+    
+
+
 
     private void UpdateTracks()
     {
@@ -87,6 +92,7 @@ public class EndlessTrackGenerator : MonoBehaviour
         {
             var track = GetRandomTrack();
             previousTrack = SpawnTrackSegment(track, previousTrack);
+            
         }
     }
 
@@ -121,6 +127,7 @@ public class EndlessTrackGenerator : MonoBehaviour
         {
             obstacleSpawner.SpawnObstacle();
         }
+       
 
         trackInstance.DecorationSpawner.SpawnDecorations();
 

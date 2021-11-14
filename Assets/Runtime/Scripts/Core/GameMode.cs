@@ -5,18 +5,57 @@ using UnityEngine.SceneManagement;
 
 public class GameMode : MonoBehaviour
 {
-    [SerializeField] private float reloadGameDelay = 3;
+    
+    [Header("Player")]
     [SerializeField] private PlayerController player;
     [SerializeField] private PlayerAnimationController playerAnimationController;
+    [SerializeField] private Animator playerAnimator;
+
+    [Header("UI")]
     [SerializeField] private MainHUD mainHUD;
     [SerializeField] private MusicPlayer musicPlayer;
+    [Header("Gameplay")]
+    [SerializeField] private float reloadGameDelay = 3;
+    [SerializeField] private int startGameCountdown = 3;
 
-    [SerializeField] private int startGameCountdown = 5;
+    [SerializeField] private float startPlayerSpeed = 10;
+    [SerializeField] private float maxPlayerSpeed = 20;
+    [SerializeField] private float timeToMaxSpeedSeconds = 300;
+    private float startGameTime;
 
+
+   [SerializeField] private float baseScoreMultiplier = 1;
+    private float score;
+    public int Score => Mathf.RoundToInt(score + cherriesTotalScore);
+
+    private int cherriesCount = 0;
+    private float cherriesScoreValue = 100;
+    private float cherriesTotalScore = 0;
+    public int CherriesCount => cherriesCount;
+    private bool isGameRunning = false;
 
     private void Awake()
-    {
+    {        
         SetWwaitForStartGameState();
+    }
+    private void Update()
+    {
+        DifficultScale();        
+    }
+
+    private void DifficultScale()
+    {                 
+
+        if (isGameRunning)
+        {
+            float timePercent = (Time.time - startGameTime) / timeToMaxSpeedSeconds;
+             player.ForwardSpeed = Mathf.Lerp(startPlayerSpeed, maxPlayerSpeed, timePercent);
+
+            float extraScoreMultiplier = 1 + timePercent;
+            cherriesTotalScore = (CherriesCount * cherriesScoreValue);
+            score += (baseScoreMultiplier * extraScoreMultiplier * player.ForwardSpeed * Time.deltaTime);
+            
+        }
     }
 
     private void SetWwaitForStartGameState()
@@ -28,6 +67,8 @@ public class GameMode : MonoBehaviour
 
     public void OnGameOver()
     {
+        isGameRunning = false;
+        player.ForwardSpeed = 0;
         StartCoroutine(ReloadGameCoroutine());
     }
 
@@ -57,6 +98,17 @@ public class GameMode : MonoBehaviour
     {
         musicPlayer.PlayMainTrackMusic();
         yield return StartCoroutine(mainHUD.PlayStartGameCountdown(startGameCountdown));
-        playerAnimationController.PlayGameAnimationStart();
+        yield return StartCoroutine(playerAnimationController.PlayStartGameAnimation());
+        player.enabled = true;
+        player.ForwardSpeed = startPlayerSpeed;
+        startGameTime = Time.time;
+        isGameRunning = true;
     }
+
+    public void IncreaseCherriesCount()
+    {
+        cherriesCount++;
+    }
+
+    
 }
