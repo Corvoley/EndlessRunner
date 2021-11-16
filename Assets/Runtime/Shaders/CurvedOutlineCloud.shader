@@ -9,11 +9,11 @@ Shader "Unlit/CurvedOutlineCloud" {
 		_ToonShade("ToonShader Cubemap(RGB)", CUBE) = "" { }
 	}
 
-		CGINCLUDE
-#include "UnityCG.cginc"
-#include "CurvedCodeUtils.cginc"
-		float _CurveStrength;
-		struct appdata {
+	CGINCLUDE
+	#include "UnityCG.cginc"
+	#include "CurvedCodeUtils.cginc"
+	float _CurveStrength;
+	struct appdata {
 		float4 vertex : POSITION;
 		float3 normal : NORMAL;
 	};
@@ -21,7 +21,7 @@ Shader "Unlit/CurvedOutlineCloud" {
 	struct v2f {
 		float4 pos : SV_POSITION;
 		UNITY_FOG_COORDS(0)
-			fixed4 color : COLOR;
+		fixed4 color : COLOR;
 	};
 
 	uniform float _Outline;
@@ -31,48 +31,48 @@ Shader "Unlit/CurvedOutlineCloud" {
 	v2f vert(appdata v) {
 		v2f o;
 		float4 rotVert = v.vertex;
-		rotVert.z = v.vertex.z * cos(_Time.y * _RotationSpeed) - v.vertex.x * sin(_Time.y * _RotationSpeed);
-		rotVert.x = v.vertex.z * sin(_Time.y * _RotationSpeed) + v.vertex.x * cos(_Time.y * _RotationSpeed);
+		rotVert.y = v.vertex.y * cos(_Time.y * _RotationSpeed) - v.vertex.x * sin(_Time.y * _RotationSpeed);
+		rotVert.x = v.vertex.y * sin(_Time.y * _RotationSpeed) + v.vertex.x * cos(_Time.y * _RotationSpeed);
 
 		o.pos = ObjectToCurvedClipPos(rotVert, _CurveStrength);
 
 		float3 norm = normalize(mul((float3x3)UNITY_MATRIX_IT_MV, v.normal));
 		float2 offset = TransformViewToProjection(norm.xy);
 
-#ifdef UNITY_Z_0_FAR_FROM_CLIPSPACE //to handle recent standard asset package on older version of unity (before 5.5)
-		o.pos.xy += offset * UNITY_Z_0_FAR_FROM_CLIPSPACE(o.pos.z) * _Outline;
-#else
-		o.pos.xy += offset * o.pos.z * _Outline;
-#endif
+		#ifdef UNITY_Z_0_FAR_FROM_CLIPSPACE //to handle recent standard asset package on older version of unity (before 5.5)
+			o.pos.xy += offset * UNITY_Z_0_FAR_FROM_CLIPSPACE(o.pos.z) * _Outline;
+		#else
+			o.pos.xy += offset * o.pos.z * _Outline;
+		#endif
 		o.color = _OutlineColor;
 		UNITY_TRANSFER_FOG(o, o.pos);
 		return o;
 	}
 	ENDCG
 
-		SubShader{
-			Tags { "RenderType" = "Opaque" }
-			UsePass "Toon/Basic/BASE"
-			Pass {
-				Name "OUTLINE"
-				Tags { "LightMode" = "Always" }
-				Cull Front
-				ZWrite Off
-				ColorMask RGB
-				Blend SrcAlpha OneMinusSrcAlpha
+	SubShader{
+		Tags { "RenderType" = "Opaque" }
+		UsePass "Toon/Basic/BASE"
+		Pass {
+			Name "OUTLINE"
+			Tags { "LightMode" = "Always" }
+			Cull Front
+			ZWrite Off
+			ColorMask RGB
+			Blend SrcAlpha OneMinusSrcAlpha
 
-				CGPROGRAM
-				#pragma vertex vert
-				#pragma fragment frag
-				#pragma multi_compile_fog
-				fixed4 frag(v2f i) : SV_Target
-				{
-					UNITY_APPLY_FOG(i.fogCoord, i.color);
-					return i.color;
-				}
-				ENDCG
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#pragma multi_compile_fog
+			fixed4 frag(v2f i) : SV_Target
+			{
+				UNITY_APPLY_FOG(i.fogCoord, i.color);
+				return i.color;
 			}
+			ENDCG
+		}
 	}
 
-		Fallback "Toon/Basic"
+	Fallback "Toon/Basic"
 }

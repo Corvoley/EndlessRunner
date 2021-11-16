@@ -130,6 +130,7 @@ public class EndlessTrackGenerator : MonoBehaviour
        
 
         trackInstance.DecorationSpawner.SpawnDecorations();
+        trackInstance.SpawnCollectables();
 
         currentSegments.Add(trackInstance);
 

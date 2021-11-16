@@ -29,10 +29,10 @@ public class PlayerCollision : MonoBehaviour
 
         Collectable collectable = other.GetComponent<Collectable>();
         if (collectable != null)
-        {            
-            collectable.PlayPickupSound();            
+        {
             gameMode.IncreaseCherriesCount();
-            Destroy(other.gameObject, 10 * Time.deltaTime);
+            collectable.OnPickedUp();
+           
         }
 
     }
