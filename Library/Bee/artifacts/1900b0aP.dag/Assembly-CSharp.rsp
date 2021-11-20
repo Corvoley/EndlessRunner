@@ -95,6 +95,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:UNITY_POST_PROCESSING_STACK_V2
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.22f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll"
@@ -278,13 +279,42 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.WindModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll"
 -r:"D:/Unity/EndlessRunner/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Postprocessing.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.Core.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.Flow.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
-"Assets/PlayerController.cs"
+"Assets/Low Poly Fruits/resources/fruits_tester.cs"
+"Assets/Runtime/Scripts/Animation/JumpAnimationState.cs"
+"Assets/Runtime/Scripts/Animation/RollAnimationState.cs"
+"Assets/Runtime/Scripts/Audio/AudioController.cs"
+"Assets/Runtime/Scripts/Audio/AudioUtility.cs"
+"Assets/Runtime/Scripts/Audio/MusicPlayer.cs"
+"Assets/Runtime/Scripts/Camera/CameraFollow.cs"
+"Assets/Runtime/Scripts/Collectables/Collectable.cs"
+"Assets/Runtime/Scripts/Collectables/CollectableLineSpawner.cs"
+"Assets/Runtime/Scripts/Core/GameMode.cs"
+"Assets/Runtime/Scripts/Core/GameSaver.cs"
+"Assets/Runtime/Scripts/Core/GameTags.cs"
+"Assets/Runtime/Scripts/Level/DecorationSpawner.cs"
+"Assets/Runtime/Scripts/Level/EndlessTrackGenerator.cs"
+"Assets/Runtime/Scripts/Level/Obstacle.cs"
+"Assets/Runtime/Scripts/Level/ObstacleDecoration.cs"
+"Assets/Runtime/Scripts/Level/ObstacleSpawn.cs"
+"Assets/Runtime/Scripts/Level/ObstacleSpawner.cs"
+"Assets/Runtime/Scripts/Level/TrackSegment.cs"
+"Assets/Runtime/Scripts/Level/WorldCurver.cs"
+"Assets/Runtime/Scripts/Player/PlayerAnimationConstants.cs"
+"Assets/Runtime/Scripts/Player/PlayerAnimationController.cs"
+"Assets/Runtime/Scripts/Player/PlayerAudioController.cs"
+"Assets/Runtime/Scripts/Player/PlayerCollision.cs"
+"Assets/Runtime/Scripts/Player/PlayerController.cs"
+"Assets/Runtime/Scripts/UI/MainHUD.cs"
+"Assets/Runtime/Scripts/UI/SettingsWindow.cs"
+"Assets/Runtime/Scripts/UI/StartGameOverlay.cs"
+"Assets/Runtime/Scripts/UI/UiAudioController.cs"
 -langversion:8.0
 
 /deterministic

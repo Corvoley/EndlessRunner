@@ -325,12 +325,14 @@
 "Assets/Low Poly Fruits/resources/fruits_tester.cs"
 "Assets/Runtime/Scripts/Animation/JumpAnimationState.cs"
 "Assets/Runtime/Scripts/Animation/RollAnimationState.cs"
+"Assets/Runtime/Scripts/Audio/AudioController.cs"
 "Assets/Runtime/Scripts/Audio/AudioUtility.cs"
 "Assets/Runtime/Scripts/Audio/MusicPlayer.cs"
 "Assets/Runtime/Scripts/Camera/CameraFollow.cs"
 "Assets/Runtime/Scripts/Collectables/Collectable.cs"
 "Assets/Runtime/Scripts/Collectables/CollectableLineSpawner.cs"
 "Assets/Runtime/Scripts/Core/GameMode.cs"
+"Assets/Runtime/Scripts/Core/GameSaver.cs"
 "Assets/Runtime/Scripts/Core/GameTags.cs"
 "Assets/Runtime/Scripts/Level/DecorationSpawner.cs"
 "Assets/Runtime/Scripts/Level/EndlessTrackGenerator.cs"
@@ -346,6 +348,8 @@
 "Assets/Runtime/Scripts/Player/PlayerCollision.cs"
 "Assets/Runtime/Scripts/Player/PlayerController.cs"
 "Assets/Runtime/Scripts/UI/MainHUD.cs"
+"Assets/Runtime/Scripts/UI/SettingsWindow.cs"
+"Assets/Runtime/Scripts/UI/StartGameOverlay.cs"
 "Assets/Runtime/Scripts/UI/UiAudioController.cs"
 -langversion:8.0
 

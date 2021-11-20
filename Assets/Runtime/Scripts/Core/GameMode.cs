@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameMode : MonoBehaviour
 {
-    
+    [SerializeField] private GameSaver gameSaver;
+
     [Header("Player")]
     [SerializeField] private PlayerController player;
     [SerializeField] private PlayerAnimationController playerAnimationController;
@@ -24,20 +25,36 @@ public class GameMode : MonoBehaviour
     private float startGameTime;
 
 
-   [SerializeField] private float baseScoreMultiplier = 1;
+    public SaveGameData CurrentSave => gameSaver.CurrentSave;
+    public AudioPreferences AudioPreferences => gameSaver.AudioPreferences;
+
+
+
+
+    [SerializeField] private float baseScoreMultiplier = 1;
     private float score;
     public int Score => Mathf.RoundToInt(score + cherriesTotalScore);
 
     private int cherriesCount = 0;
     private float cherriesScoreValue = 100;
     private float cherriesTotalScore = 0;
+    private float highestScore = 0;
+    private float lastScore = 0;
+    private int totalCherriesCount = 0;
     public int CherriesCount => cherriesCount;
+    public float HighestScore => Mathf.RoundToInt(highestScore);
+    public float LastScore => lastScore;
+    public int TotalCherriesCount => totalCherriesCount;
+
     private bool isGameRunning = false;
 
     private void Awake()
-    {        
+    {
+        gameSaver.LoadGame();
         SetWwaitForStartGameState();
     }
+
+   
     private void Update()
     {
         DifficultScale();        
@@ -57,6 +74,7 @@ public class GameMode : MonoBehaviour
             
         }
     }
+    
 
     private void SetWwaitForStartGameState()
     {
@@ -69,6 +87,12 @@ public class GameMode : MonoBehaviour
     {
         isGameRunning = false;
         player.ForwardSpeed = 0;
+        gameSaver.SaveGame(new SaveGameData
+        {
+            HighestScore = Score > gameSaver.CurrentSave.HighestScore ? Score : gameSaver.CurrentSave.HighestScore,
+            LastScore = Score,
+            TotalCherriesCollected = gameSaver.CurrentSave.TotalCherriesCollected + cherriesCount
+        });
         StartCoroutine(ReloadGameCoroutine());
     }
 
@@ -108,7 +132,12 @@ public class GameMode : MonoBehaviour
     public void IncreaseCherriesCount()
     {
         cherriesCount++;
+      
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
     
 }

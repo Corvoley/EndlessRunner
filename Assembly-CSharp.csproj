@@ -78,6 +78,10 @@
     <Compile Include="Assets\Runtime\Scripts\Core\GameTags.cs" />
     <Compile Include="Assets\Runtime\Scripts\Audio\AudioUtility.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\DecorationSpawner.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Audio\AudioController.cs" />
+    <Compile Include="Assets\Runtime\Scripts\UI\SettingsWindow.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Core\GameSaver.cs" />
+    <Compile Include="Assets\Runtime\Scripts\UI\StartGameOverlay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Runtime\Shaders\ToonShading\Shaders\ToonBasicOutline.shader" />

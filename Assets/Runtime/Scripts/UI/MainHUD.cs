@@ -10,16 +10,20 @@ public class MainHUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI distanceText;
     [SerializeField] private TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI cherriesText;
+    
     [SerializeField] private GameMode gameMode;
-    [SerializeField] private GameObject resumeHUD;
-    [SerializeField] private GameObject pauseHUD;
-    [SerializeField] private GameObject startHUD;
+    [SerializeField] private GameObject hudOverlay;
+    [SerializeField] private GameObject pauseOverlay;
+    [SerializeField] private GameObject startGameOverlay;
+    [SerializeField] private GameObject settingsOverlay;
     [SerializeField] private UiAudioController audioController;
     
 
     private void Awake()
-    { 
-        ShowStartOverlay();
+    {
+        ShowHudOverlay();
+
+
     }
     private void LateUpdate()
     {
@@ -42,23 +46,38 @@ public class MainHUD : MonoBehaviour
 
     public void ShowHudOverlay()
     {
-        startHUD.SetActive(false);
-        resumeHUD.SetActive(true);
-        pauseHUD.SetActive(false);
-        
+        startGameOverlay.SetActive(false);
+        pauseOverlay.SetActive(false);
+        hudOverlay.SetActive(true);
+        settingsOverlay.SetActive(false);
+
+
     }
     public void ShowPauseOverlay()
     {
-        resumeHUD.SetActive(false);
-        pauseHUD.SetActive(true);
+        startGameOverlay.SetActive(false);
+        pauseOverlay.SetActive(true);
+        hudOverlay.SetActive(false);
+        settingsOverlay.SetActive(false);
     }
 
     public void ShowStartOverlay()
     {
-        startHUD.SetActive(true);
+
+        startGameOverlay.SetActive(true);
+        pauseOverlay.SetActive(false);
+        hudOverlay.SetActive(false);
+        settingsOverlay.SetActive(false);
 
     }
+    public void ShowSettingsOverlay()
+    {
+        startGameOverlay.SetActive(false);
+        pauseOverlay.SetActive(false);
+        hudOverlay.SetActive(false);
+        settingsOverlay.SetActive(true);
 
+    }
     public IEnumerator PlayStartGameCountdown(int countdownSeconds)
     {
         ShowHudOverlay();
