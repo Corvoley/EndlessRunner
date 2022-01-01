@@ -195,6 +195,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1207,6 +1208,51 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      IconMagnet: -4987260106884926051
+      SliderBG: 21300074
+      MagnetPowerup: 21300028
+      ArrowButtonShadow: 21300080
+      StarIcon: -7380822587454353635
+      ArrowButtonDefault: 21300078
+      UIButtonBG: 21300096
+      UIBorderLightGrey: 21300104
+      LifePowerup: 21300034
+      MultiplierPowerup: 21300030
+      PauseResume: 21300068
+      MissionsIcon: 21300002
+      Shop: 21300044
+      Background: 21300040
+      UIButtonNoShadow: 21300094
+      Settings: 21300006
+      StartButton: 21300000
+      Leaderboard: 21300042
+      LifeHeart: 21300050
+      NoItem: 21300070
+      HandleSlider: 21300072
+      UISliderBG: 21300088
+      PauseMenu: 21300066
+      InvicibilityPowerup: 21300032
+      UISliderFill: 21300090
+      IconDouble: -4049329702819686777
+      TimeBar: 21300052
+      UIButtonOrangeNoShadow: 21300100
+      ActivePowerUpBackground: 21300058
+      UIBorderFilled01: 21300084
+      CloseButton: 21300024
+      ArrowButtonGrey: 21300082
+      PauseButton: 21300048
+      StoreIcon: 21300004
+      UIBorderFilledRed: 21300086
+      UIButtonOrange: 21300092
+      SettingIcone: 21300076
+      Missions: 21300046
+      UIBorderFilledOrange: 21300102
+      UIButton: 21300098
+      GameUIBackground: 21300064
+      LeaderboardIcon: 21300008
+      StartButtonPressed: 21300106
+      BerryIcon: 21300060
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

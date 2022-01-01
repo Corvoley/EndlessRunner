@@ -1,21 +1,28 @@
 using UnityEngine;
+using Newtonsoft.Json;
+using System.IO;
 
 public class SaveGameData
 {
-    public int LastScore;
-    public int HighestScore;
-    public int TotalCherriesCollected;
+    public int LastScore = 0;
+    public int HighestScore = 0;
+    public int TotalCherriesCollected = 0;
 }
 
 public class AudioPreferences
 {
-    public float MasterVolume;
-    public float MusicVolume;
-    public float SFXVolume;
+    public float MasterVolume = 1;
+    public float MusicVolume = 1;
+    public float SFXVolume = 1;
 }
+
 
 public class GameSaver : MonoBehaviour
 {
+
+    private string SaveGameFilePath => $"{Application.persistentDataPath}/save.json";
+    private string AudioPreferenceFilePath => $"{Application.persistentDataPath}/preferences.json";
+
     private const string LastScoreKey = "LastScore";
     private const string HighestScoreKey = "HighestScore";
     private const string TotalCherriesCollectedKey = "CherriesCollected";
@@ -28,14 +35,54 @@ public class GameSaver : MonoBehaviour
     public AudioPreferences AudioPreferences { get; private set; }
 
     private bool IsLoaded => CurrentSave != null && AudioPreferences != null;
+    private void SaveGameDataToFile(string filePath, SaveGameData data)
+    {
+        
+        using(FileStream stream = new FileStream(filePath,FileMode.Create, FileAccess.Write))
+        using (StreamWriter writer = new StreamWriter(stream))
+        using (JsonWriter jsonWriter = new JsonTextWriter(writer))
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(jsonWriter, data);
+        }
+    }
+    private void SaveAudioPreferencesToFile(string filePath, AudioPreferences data)
+    {
+
+        using (FileStream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+        using (StreamWriter writer = new StreamWriter(stream))
+        using (JsonWriter jsonWriter = new JsonTextWriter(writer))
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(jsonWriter, data);
+        }
+    }
+
+    private SaveGameData LoadGameDataFromFile(string filePath)
+    {
+        using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Read))
+        using (StreamReader reader = new StreamReader(stream))
+        using (JsonReader jsonReader = new JsonTextReader(reader))
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            return serializer.Deserialize<SaveGameData>(jsonReader);
+        }
+    }
+    private AudioPreferences LoadAudioPreferencesFromFile(string filePath)
+    {
+        using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Read))
+        using (StreamReader reader = new StreamReader(stream))
+        using (JsonReader jsonReader = new JsonTextReader(reader))
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            return serializer.Deserialize<AudioPreferences>(jsonReader);
+        }
+    }
 
     public void SaveGame(SaveGameData saveData)
     {
         CurrentSave = saveData;
-        PlayerPrefs.SetInt(LastScoreKey, CurrentSave.LastScore);
-        PlayerPrefs.SetInt(HighestScoreKey, CurrentSave.HighestScore);
-        PlayerPrefs.SetInt(TotalCherriesCollectedKey, CurrentSave.TotalCherriesCollected);
-        PlayerPrefs.Save();
+        SaveGameDataToFile(SaveGameFilePath, saveData);
     }
 
     public void LoadGame()
@@ -45,36 +92,17 @@ public class GameSaver : MonoBehaviour
             return;
         }
 
-        CurrentSave = new SaveGameData
-        {
-            LastScore = PlayerPrefs.GetInt(LastScoreKey, 0),
-            HighestScore = PlayerPrefs.GetInt(HighestScoreKey, 0),
-            TotalCherriesCollected = PlayerPrefs.GetInt(TotalCherriesCollectedKey, 0)
-        };
+        CurrentSave = LoadGameDataFromFile(SaveGameFilePath) ?? new SaveGameData();
 
-        AudioPreferences = new AudioPreferences
-        {
-            MasterVolume = PlayerPrefs.GetFloat(MainVolumeKey, 1),
-            MusicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 1),
-            SFXVolume = PlayerPrefs.GetFloat(SFXVolumeKey, 1),
-        };
+
+        AudioPreferences = LoadAudioPreferencesFromFile(AudioPreferenceFilePath) ?? new AudioPreferences();
+       
     }
 
     public void SaveAudioPreferences(AudioPreferences preferences)
     {
         AudioPreferences = preferences;
-        PlayerPrefs.SetFloat(MainVolumeKey, AudioPreferences.MasterVolume);
-        PlayerPrefs.SetFloat(MusicVolumeKey, AudioPreferences.MusicVolume);
-        PlayerPrefs.SetFloat(SFXVolumeKey, AudioPreferences.SFXVolume);
-
-        PlayerPrefs.Save();
+        SaveAudioPreferencesToFile(AudioPreferenceFilePath, preferences);
     }
 
-    public void DeleteAllData()
-    {
-        PlayerPrefs.DeleteAll();
-        CurrentSave = null;
-        AudioPreferences = null;
-        LoadGame();
-    }
 }

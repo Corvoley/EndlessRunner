@@ -53,12 +53,5 @@ public class SettingsWindow : MonoBehaviour
     public void OnSFXVolumeChange(float value)
     {
         audioController.SFXVolume = value;
-    }
-
-    public void DeleteAllData()
-    {
-        gameSaver.DeleteAllData();
-        deleteAllDataButton.interactable = false;
-        deleteAllDataButtonText.text = "DELETED!";
-    }
+    } 
 }
