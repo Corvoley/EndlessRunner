@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,9 +53,6 @@
     <UnityVersion>2021.2.3f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Runtime\Scripts\Level\ObstacleSpawn.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerAudioController.cs" />
     <Compile Include="Assets\Runtime\Scripts\Core\GameMode.cs" />
@@ -85,6 +82,9 @@
     <Compile Include="Assets\Runtime\Scripts\Core\GameTags.cs" />
     <Compile Include="Assets\Runtime\Scripts\Audio\AudioUtility.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\DecorationSpawner.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\ObstacleMovable.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Animation\MoveSideToSideAnimationState.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Animation\ObstacleAnimationConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Runtime\Shaders\ToonShading\Shaders\ToonBasicOutline.shader" />
