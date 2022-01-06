@@ -7,18 +7,20 @@ using UnityEngine;
 public class ObstacleDecoration : MonoBehaviour
 {
     [SerializeField] private AudioClip collisionAudio;
-    [SerializeField] private Animation collisionAnimation;
+    
     private AudioSource audioSource;
     public AudioSource AudioSource => audioSource == null ? audioSource = GetComponent<AudioSource>() : audioSource;
 
 
-    public void PlayCollisionFeedback()
+    public virtual void PlayCollisionFeedback()
     {
         AudioUtility.PlayAudioCue(AudioSource, collisionAudio);
+        Animation collisionAnimation = GetComponentInChildren<Animation>();
         if (collisionAnimation != null)
         {
             collisionAnimation.Play();
         }
+
     }
 
 }

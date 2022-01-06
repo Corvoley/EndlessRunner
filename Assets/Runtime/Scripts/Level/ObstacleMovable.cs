@@ -22,4 +22,12 @@ public class ObstacleMovable : Obstacle
         pos.x = lanePositionX;
         transform.position = pos;
     }
+
+    public override void Die(Collider collider)
+    {
+        base.Die(collider);
+        enabled = false;
+    }
+
+    
 }

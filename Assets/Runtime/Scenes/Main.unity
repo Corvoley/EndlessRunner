@@ -6579,6 +6579,18 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8569686738747452692, guid: 33de45b349ff61b468ab74499f79fa80, type: 3}
+      propertyPath: minRewardTrackCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569686738747452692, guid: 33de45b349ff61b468ab74499f79fa80, type: 3}
+      propertyPath: maxTracksBeforeReward
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569686738747452692, guid: 33de45b349ff61b468ab74499f79fa80, type: 3}
+      propertyPath: minTracksBeforeReward
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569686738747452692, guid: 33de45b349ff61b468ab74499f79fa80, type: 3}
       propertyPath: chanceToSpawnCollectable
       value: 80
       objectReference: {fileID: 0}

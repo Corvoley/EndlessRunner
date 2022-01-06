@@ -18,21 +18,18 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Obstacle obstacle = other.GetComponent<Obstacle>();
-        if (obstacle != null)
+        IPlayerCollisionReact collisionReaction = other.GetComponent<IPlayerCollisionReact>();
+        if (collisionReaction != null)
         {
-            playerController.Die();
-            animationController.Die();
-            gameMode.OnGameOver();
-            obstacle.PlayCollisionFeedback(other);
-        }
+            collisionReaction.ReactToPlayerCollision(new PlayerCollisionInfo()
+            {
+                Player = playerController,
+                PlayerAnimationController = animationController,
+                GameMode = gameMode,
+                MyCollider = other
 
-        Collectable collectable = other.GetComponent<Collectable>();
-        if (collectable != null)
-        {
-            gameMode.IncreaseCherriesCount();
-            collectable.OnPickedUp();
-           
+            });
+            ;
         }
 
     }

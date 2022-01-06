@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: collisionAudio
       value: 
       objectReference: {fileID: 8300000, guid: 90690b03aaccb6e4a96d2cdb757b3b44, type: 3}
+    - target: {fileID: -290359770765150813, guid: a6f231ee3be1e9b44be88a14ddaeec7f, type: 3}
+      propertyPath: collisionAnimator
+      value: 
+      objectReference: {fileID: 9034533651299215108}
     - target: {fileID: 3885668677569471444, guid: a6f231ee3be1e9b44be88a14ddaeec7f, type: 3}
       propertyPath: m_Name
       value: ObstacleDecoration_Rat
@@ -59,13 +63,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -290359770765150813, guid: a6f231ee3be1e9b44be88a14ddaeec7f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a6f231ee3be1e9b44be88a14ddaeec7f, type: 3}
+--- !u!1 &4086658701783837083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3885668677569471444, guid: a6f231ee3be1e9b44be88a14ddaeec7f, type: 3}
+  m_PrefabInstance: {fileID: 962100698285492815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7041765530231288762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7846239272338258421, guid: a6f231ee3be1e9b44be88a14ddaeec7f, type: 3}
   m_PrefabInstance: {fileID: 962100698285492815}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5701419204638989111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086658701783837083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411ee196825ec1040ae073afad500061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionAudio: {fileID: 8300000, guid: 90690b03aaccb6e4a96d2cdb757b3b44, type: 3}
+  collisionAnimation: {fileID: 0}
+  animator: {fileID: 9034533651299215108}
 --- !u!1001 &9034533651308630628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,3 +156,8 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4f80296b2aa376d41807099f5199f8ce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24b9245bce05384439fa7fcfc8f87224, type: 3}
+--- !u!95 &9034533651299215108 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 24b9245bce05384439fa7fcfc8f87224, type: 3}
+  m_PrefabInstance: {fileID: 9034533651308630628}
+  m_PrefabAsset: {fileID: 0}
