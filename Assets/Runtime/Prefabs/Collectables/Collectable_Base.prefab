@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4775213987094495707}
   - component: {fileID: 2341661425428996244}
-  - component: {fileID: 4807831605657115290}
   - component: {fileID: 1059527407687446127}
   m_Layer: 0
   m_Name: Collectable_Base
@@ -29,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -42,7 +42,7 @@ AudioSource:
   m_GameObject: {fileID: 4654955124761114243}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8605089138821175006, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -129,21 +129,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4807831605657115290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4654955124761114243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed14a233c6ec5e34bb25f458506d546b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupSound: {fileID: 8300000, guid: 0e1d959a44eb0934e94bcd45cb6a22ac, type: 3}
-  rotateSpeed: 100
-  model: {fileID: 0}
 --- !u!65 &1059527407687446127
 BoxCollider:
   m_ObjectHideFlags: 0

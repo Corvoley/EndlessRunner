@@ -38,7 +38,7 @@ public class TrackSegment : MonoBehaviour
 
             int randomIndex = Random.Range(0, collectableLineSpawners.Length);
             CollectableLineSpawner collectableSpawner = collectableLineSpawners[randomIndex];
-            collectableSpawner.SpawnCollectableLine(skipPositions);
+            collectableSpawner.SpawnCollectables(skipPositions);
         }
     }
 

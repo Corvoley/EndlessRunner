@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3087529266918047833}
   - {fileID: 1972504931870411874}
@@ -59,6 +60,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8946512944814689801}
   m_RootOrder: 3
@@ -89,6 +91,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8946512944814689801}
   m_RootOrder: 2
@@ -120,6 +123,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8946512944814689801}
   - {fileID: 8031756141427614785}
@@ -174,6 +178,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 656840818234064400}
   - {fileID: 7545655115073859726}
@@ -254,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 4528336506877844379, guid: 1661359fc06c50c419cabcf0792f7c32, type: 3}
       propertyPath: collectablePrefab
       value: 
-      objectReference: {fileID: 1226864177323098884, guid: a1d70fae715950445b269b85b9573bb9, type: 3}
+      objectReference: {fileID: -2153892528581690062, guid: a1d70fae715950445b269b85b9573bb9, type: 3}
     - target: {fileID: 4528336506877844379, guid: 1661359fc06c50c419cabcf0792f7c32, type: 3}
       propertyPath: distanceBetweenCollectables
       value: 3
@@ -397,7 +402,7 @@ PrefabInstance:
     - target: {fileID: 4528336506877844379, guid: 1661359fc06c50c419cabcf0792f7c32, type: 3}
       propertyPath: collectablePrefab
       value: 
-      objectReference: {fileID: 1226864177323098884, guid: a1d70fae715950445b269b85b9573bb9, type: 3}
+      objectReference: {fileID: -2153892528581690062, guid: a1d70fae715950445b269b85b9573bb9, type: 3}
     - target: {fileID: 4528336506877844379, guid: 1661359fc06c50c419cabcf0792f7c32, type: 3}
       propertyPath: distanceBetweenCollectables
       value: 3
@@ -595,7 +600,7 @@ PrefabInstance:
     - target: {fileID: 4528336506877844379, guid: 1661359fc06c50c419cabcf0792f7c32, type: 3}
       propertyPath: collectablePrefab
       value: 
-      objectReference: {fileID: 1226864177323098884, guid: a1d70fae715950445b269b85b9573bb9, type: 3}
+      objectReference: {fileID: -2153892528581690062, guid: a1d70fae715950445b269b85b9573bb9, type: 3}
     - target: {fileID: 4528336506877844379, guid: 1661359fc06c50c419cabcf0792f7c32, type: 3}
       propertyPath: distanceBetweenCollectables
       value: 3

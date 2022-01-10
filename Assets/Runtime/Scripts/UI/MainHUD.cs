@@ -10,6 +10,8 @@ public class MainHUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI distanceText;
     [SerializeField] private TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI cherriesText;
+    [SerializeField] private TextMeshProUGUI peanutText;
+    [SerializeField] private TextMeshProUGUI scoreMultiplierText;
     
     [SerializeField] private GameMode gameMode;
     [SerializeField] private GameObject hudOverlay;
@@ -30,6 +32,9 @@ public class MainHUD : MonoBehaviour
         scoreText.text = $"Score: {gameMode.Score}";
         distanceText.text = $"{Mathf.RoundToInt(player.TotalDistanceZ)}m";
         cherriesText.text = $"{gameMode.CherriesCount}";
+        peanutText.text = $"{gameMode.PeanutCount}";
+        scoreMultiplierText.text = $"{gameMode.TemporaryScoreMultiplier}x";
+        scoreMultiplierText.gameObject.SetActive(gameMode.TemporaryScoreMultiplier > 1);
     }
 
 

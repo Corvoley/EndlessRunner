@@ -10,7 +10,6 @@ public class GameMode : MonoBehaviour
     [Header("Player")]
     [SerializeField] private PlayerController player;
     [SerializeField] private PlayerAnimationController playerAnimationController;
-    [SerializeField] private Animator playerAnimator;
 
     [Header("UI")]
     [SerializeField] private MainHUD mainHUD;
@@ -28,23 +27,29 @@ public class GameMode : MonoBehaviour
     public SaveGameData CurrentSave => gameSaver.CurrentSave;
     public AudioPreferences AudioPreferences => gameSaver.AudioPreferences;
 
-
-
-
-    [SerializeField] private float baseScoreMultiplier = 1;
+    public int TemporaryScoreMultiplier
+    { get => temporaryScoreMultiplier;
+        set => temporaryScoreMultiplier = Mathf.Max(1, value);      
+    }
+    public int temporaryScoreMultiplier = 1;
+    public float baseScoreMultiplier = 1;
     private float score;
     public int Score => Mathf.RoundToInt(score + cherriesTotalScore);
 
     private int cherriesCount = 0;
+    private int peanutCount = 0;
     private float cherriesScoreValue = 100;
     private float cherriesTotalScore = 0;
     private float highestScore = 0;
     private float lastScore = 0;
     private int totalCherriesCount = 0;
+    private int totalPeanutCount = 0;
     public int CherriesCount => cherriesCount;
+    public int PeanutCount => peanutCount;
     public float HighestScore => Mathf.RoundToInt(highestScore);
     public float LastScore => lastScore;
     public int TotalCherriesCount => totalCherriesCount;
+    public int TotalPeanutCount => totalPeanutCount;
 
     private bool isGameRunning = false;
 
@@ -70,7 +75,7 @@ public class GameMode : MonoBehaviour
 
             float extraScoreMultiplier = 1 + timePercent;
             cherriesTotalScore = (CherriesCount * cherriesScoreValue);
-            score += (baseScoreMultiplier * extraScoreMultiplier * player.ForwardSpeed * Time.deltaTime);
+            score += ( baseScoreMultiplier * temporaryScoreMultiplier * extraScoreMultiplier * player.ForwardSpeed * Time.deltaTime);
             
         }
     }
@@ -91,7 +96,8 @@ public class GameMode : MonoBehaviour
         {
             HighestScore = Score > gameSaver.CurrentSave.HighestScore ? Score : gameSaver.CurrentSave.HighestScore,
             LastScore = Score,
-            TotalCherriesCollected = gameSaver.CurrentSave.TotalCherriesCollected + cherriesCount
+            TotalCherriesCollected = gameSaver.CurrentSave.TotalCherriesCollected + cherriesCount,
+            TotalPeanutCollected = gameSaver.CurrentSave.TotalPeanutCollected + peanutCount
         });
         StartCoroutine(ReloadGameCoroutine());
     }
@@ -133,6 +139,11 @@ public class GameMode : MonoBehaviour
     {
         cherriesCount++;
       
+    }
+
+    public void IncreasePeanutCount()
+    {
+        peanutCount++;
     }
 
     public void ExitGame()

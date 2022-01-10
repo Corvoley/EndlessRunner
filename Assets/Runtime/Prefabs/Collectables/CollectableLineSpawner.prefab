@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -7.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8249722762684585618}
   m_RootOrder: 0
@@ -56,6 +57,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8249722762684585618}
   m_RootOrder: 1
@@ -87,6 +89,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4106337358640175358}
   - {fileID: 6819968534922743788}
@@ -105,7 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cbdf3440b651543a116c6fb535222d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectablePrefab: {fileID: 0}
+  collectablePrefab: {fileID: -2153892528581690062, guid: a1d70fae715950445b269b85b9573bb9, type: 3}
+  rareCollectablePrefab: {fileID: 4971421959341712834, guid: 978834c5c71943548ab066cf5f184052, type: 3}
+  rarePickupChance: 0.1
+  powerUpPrefabs:
+  - {fileID: 5900989589380737860, guid: 745935f6cc8c62348b5c79a675e67b8e, type: 3}
+  powerUpChance: 0.1
   start: {fileID: 4106337358640175358}
   end: {fileID: 6819968534922743788}
   distanceBetweenCollectables: 3

@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionAudio: {fileID: 0}
-  collisionAnimation: {fileID: 0}
 --- !u!82 &5106911814092262991
 AudioSource:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ AudioSource:
   m_GameObject: {fileID: 3885668677569471444}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8605089138821175006, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

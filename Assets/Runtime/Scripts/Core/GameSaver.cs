@@ -7,6 +7,7 @@ public class SaveGameData
     public int LastScore = 0;
     public int HighestScore = 0;
     public int TotalCherriesCollected = 0;
+    public int TotalPeanutCollected = 0;
 }
 
 public class AudioPreferences
@@ -103,6 +104,12 @@ public class GameSaver : MonoBehaviour
     {
         AudioPreferences = preferences;
         SaveAudioPreferencesToFile(AudioPreferenceFilePath, preferences);
+    }
+
+    public void DeleteAllData()
+    {
+        File.Delete(SaveGameFilePath);
+        File.Delete(AudioPreferenceFilePath);
     }
 
 }

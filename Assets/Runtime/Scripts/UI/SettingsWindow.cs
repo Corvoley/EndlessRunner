@@ -54,4 +54,8 @@ public class SettingsWindow : MonoBehaviour
     {
         audioController.SFXVolume = value;
     } 
+    public void DeleteAllData()
+    {
+        gameSaver.DeleteAllData();
+    }
 }

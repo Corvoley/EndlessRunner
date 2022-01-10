@@ -109,6 +109,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2341661425428996244, guid: bcf7a26e446e4d24195ef3efe7ec5c08, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
     - target: {fileID: 4654955124761114243, guid: bcf7a26e446e4d24195ef3efe7ec5c08, type: 3}
       propertyPath: m_Name
       value: Collectable_Cherry
@@ -165,10 +169,30 @@ PrefabInstance:
       propertyPath: model
       value: 
       objectReference: {fileID: 823600525971189254}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4807831605657115290, guid: bcf7a26e446e4d24195ef3efe7ec5c08, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bcf7a26e446e4d24195ef3efe7ec5c08, type: 3}
+--- !u!1 &1380302857087840029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4654955124761114243, guid: bcf7a26e446e4d24195ef3efe7ec5c08, type: 3}
+  m_PrefabInstance: {fileID: 6034378367177349534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1295520420863596613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4775213987094495707, guid: bcf7a26e446e4d24195ef3efe7ec5c08, type: 3}
   m_PrefabInstance: {fileID: 6034378367177349534}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-2153892528581690062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380302857087840029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c270084fdb3b714cb7aab7643cce247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: 0e1d959a44eb0934e94bcd45cb6a22ac, type: 3}
+  model: {fileID: 823600525971189254}
