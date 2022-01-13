@@ -47,11 +47,21 @@ public class Obstacle : MonoBehaviour , IPlayerCollisionReact
         return minDistDecoration;
     }
 
+    public static bool IsPlayerInvincible(PlayerController player)
+    {
+        PowerUpBehaviourInvincible invincibleBehaviour = player.GetComponentInChildren<PowerUpBehaviourInvincible>();
+        return invincibleBehaviour != null && invincibleBehaviour.IsPowerUpActive;
+    }
     public void ReactToPlayerCollision(in PlayerCollisionInfo collisionInfo)
     {
         Die(collisionInfo.MyCollider);
-        collisionInfo.Player.Die();
-        collisionInfo.PlayerAnimationController.Die();
-        collisionInfo.GameMode.OnGameOver();
+        
+        if (!IsPlayerInvincible(collisionInfo.Player))
+        {
+            collisionInfo.Player.Die();
+            collisionInfo.PlayerAnimationController.Die();
+            collisionInfo.GameMode.OnGameOver();
+        }
+        
     }
 }

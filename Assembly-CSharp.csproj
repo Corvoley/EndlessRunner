@@ -61,6 +61,7 @@
     <Compile Include="Assets\Runtime\Scripts\Level\Obstacle.cs" />
     <Compile Include="Assets\Runtime\Scripts\Collectables\CollectableLineSpawner.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\ObstacleSpawner.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUp.cs" />
     <Compile Include="Assets\Runtime\Scripts\UI\StartGameOverlay.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\WorldCurver.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\IPlayerCollisionReact.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Runtime\Scripts\Level\TrackSegment.cs" />
     <Compile Include="Assets\Runtime\Scripts\UI\UiAudioController.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerAnimationConstants.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUpMagnet.cs" />
     <Compile Include="Assets\Runtime\Scripts\Animation\RollAnimationState.cs" />
     <Compile Include="Assets\Runtime\Scripts\Animation\MoveSideToSideAnimationState.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\EndlessTrackGenerator.cs" />
@@ -90,7 +92,11 @@
     <Compile Include="Assets\Runtime\Scripts\Audio\AudioUtility.cs" />
     <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUpScoreMultiplier.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\DecorationSpawner.cs" />
-    <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUp.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUpBehaviour.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUpBehaviourScoreMultiplier.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUpInvincible.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUpBehaviourInvincible.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUpBehaviourMagnet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Runtime\Shaders\ToonShading\Shaders\ToonBasicOutline.shader" />

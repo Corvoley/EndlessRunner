@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollectableCherry : Collectable
 {
 
-    public override void PickedUpFeedback(PlayerCollisionInfo collisionInfo)
+    protected override void ExecuteCollectableBehaviour(in PlayerCollisionInfo collisionInfo)
     {
         collisionInfo.GameMode.IncreaseCherriesCount();
     }

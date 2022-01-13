@@ -112,7 +112,9 @@ MonoBehaviour:
   rareCollectablePrefab: {fileID: 4971421959341712834, guid: 978834c5c71943548ab066cf5f184052, type: 3}
   rarePickupChance: 0.1
   powerUpPrefabs:
-  - {fileID: 5900989589380737860, guid: 745935f6cc8c62348b5c79a675e67b8e, type: 3}
+  - {fileID: 2042476084216574359, guid: a357fb50b6bedb9408a1b00eeba09d98, type: 3}
+  - {fileID: -4579417497683543142, guid: abc6d8ad64ea7e1458c0a59ae5f86b1a, type: 3}
+  - {fileID: -7305974075081490427, guid: bf9e29d2e02344943b3bad634e93450a, type: 3}
   powerUpChance: 0.1
   start: {fileID: 4106337358640175358}
   end: {fileID: 6819968534922743788}

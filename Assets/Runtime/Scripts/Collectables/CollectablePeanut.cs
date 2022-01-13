@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectablePeanut : Collectable
 {
-    public override void PickedUpFeedback(PlayerCollisionInfo collisionInfo)
+    protected override void ExecuteCollectableBehaviour(in PlayerCollisionInfo collisionInfo)
     {
         collisionInfo.GameMode.IncreasePeanutCount();
     }
