@@ -55,6 +55,7 @@ public class GameMode : MonoBehaviour
 
     private void Awake()
     {
+        player.PlayerDeathEvent += OnPlayerDeath;
         gameSaver.LoadGame();
         SetWwaitForStartGameState();
     }
@@ -88,6 +89,10 @@ public class GameMode : MonoBehaviour
         musicPlayer.PlayStartMenuMusic();
     }
 
+    private void OnPlayerDeath()
+    {
+        OnGameOver();
+    }
     public void OnGameOver()
     {
         isGameRunning = false;
@@ -150,5 +155,9 @@ public class GameMode : MonoBehaviour
     {
         Application.Quit();
     }
-    
+    private void OnDestroy()
+    {
+        player.PlayerDeathEvent -= OnPlayerDeath;
+    }
+
 }

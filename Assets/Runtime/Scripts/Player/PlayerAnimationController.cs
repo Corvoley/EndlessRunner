@@ -10,8 +10,9 @@ public class PlayerAnimationController : MonoBehaviour
     private PlayerController player;
 
     private void Awake()
-    {
+    {        
         player = GetComponent<PlayerController>();
+        player.PlayerDeathEvent += OnPlayerDeath;
     }
 
     private void Update()
@@ -21,11 +22,11 @@ public class PlayerAnimationController : MonoBehaviour
         
         
     }
-
-    public void Die()
+    private void OnPlayerDeath()
     {
         animator.SetTrigger(PlayerAnimationConstants.DieTrigger);
     }
+
     public IEnumerator PlayStartGameAnimation()
     {
         animator.SetTrigger(PlayerAnimationConstants.StartGameTrigger);
@@ -38,7 +39,12 @@ public class PlayerAnimationController : MonoBehaviour
             && animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
         {
             yield return null;
-        }
-       
+        }      
+
+    }
+
+    private void OnDestroy()
+    {
+        player.PlayerDeathEvent -= OnPlayerDeath;
     }
 }

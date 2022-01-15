@@ -1,10 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
+    public event Action PlayerDeathEvent;
+
     [SerializeField] private PlayerAudioController audioController;
+    [SerializeField] private Obstacle obstacle;
 
     [Header("Moviment")]
     [SerializeField] private float horizontalSpeed = 15;
@@ -36,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     public float TotalDistanceZ => transform.position.z - initialPosition.z;
     void Awake()
-    {        
+    {
         initialPosition = transform.position;
         StopRoll();
     }
@@ -151,11 +156,32 @@ public class PlayerController : MonoBehaviour
         rollCollider.enabled = false;
     }
 
-    public void Die()
+    public void OnCollisionWithObstacle()
+    {
+
+        if (!IsInvencible)
+        {
+            Die();
+        }
+
+    }
+
+    private bool IsInvencible
+    {
+        get
+        {
+            PowerUpBehaviourInvincible invincibleBehaviour = GetComponentInChildren<PowerUpBehaviourInvincible>();
+            return invincibleBehaviour != null && invincibleBehaviour.IsPowerUpActive;
+        }
+
+    }
+
+    private void Die()
     {
         ForwardSpeed = 0;
         this.enabled = false;
         StopRoll();
         StopJump();
+        PlayerDeathEvent?.Invoke();
     }
 }

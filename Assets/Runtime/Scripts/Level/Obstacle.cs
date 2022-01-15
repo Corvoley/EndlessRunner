@@ -1,9 +1,16 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour , IPlayerCollisionReact
+
+
+public class Obstacle : MonoBehaviour, IPlayerCollisionReact
 {
+
+    
+
     [SerializeField] private DecorationSpawner[] decorationSpawners;
+
 
     private List<ObstacleDecoration> obstacleDecorations = new List<ObstacleDecoration>();
     public void SpawnDecorations()
@@ -47,21 +54,13 @@ public class Obstacle : MonoBehaviour , IPlayerCollisionReact
         return minDistDecoration;
     }
 
-    public static bool IsPlayerInvincible(PlayerController player)
-    {
-        PowerUpBehaviourInvincible invincibleBehaviour = player.GetComponentInChildren<PowerUpBehaviourInvincible>();
-        return invincibleBehaviour != null && invincibleBehaviour.IsPowerUpActive;
-    }
+
     public void ReactToPlayerCollision(in PlayerCollisionInfo collisionInfo)
     {
         Die(collisionInfo.MyCollider);
-        
-        if (!IsPlayerInvincible(collisionInfo.Player))
-        {
-            collisionInfo.Player.Die();
-            collisionInfo.PlayerAnimationController.Die();
-            collisionInfo.GameMode.OnGameOver();
-        }
-        
+        collisionInfo.Player.OnCollisionWithObstacle();
+              
+
+
     }
 }

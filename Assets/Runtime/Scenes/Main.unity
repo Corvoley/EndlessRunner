@@ -7356,6 +7356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1039976784133768168, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
+      propertyPath: obstacle
+      value: 
+      objectReference: {fileID: 1866883507473763490, guid: 9dbe8e8a22d8d4b4aab07557037dac63, type: 3}
     - target: {fileID: 1039976784133768169, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
       propertyPath: m_Name
       value: Player
