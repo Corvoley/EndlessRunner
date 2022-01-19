@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingsWindow : MonoBehaviour
+public class SettingsWindow : UIOverlay
 {
     [SerializeField] private MainHUD mainHud;
     [SerializeField] private GameSaver gameSaver;
@@ -37,7 +37,7 @@ public class SettingsWindow : MonoBehaviour
     public void Close()
     {
         //TODO: Assuming we only open from StartGameOverlay. Need go back functionality
-        mainHud.ShowStartOverlay();
+        mainHud.ShowOverlay<StartGameOverlay>();
     }
 
     public void OnMasterVolumeChange(float value)

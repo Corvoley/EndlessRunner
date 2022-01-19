@@ -596,8 +596,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 301177983}
+  - component: {fileID: 301177984}
   m_Layer: 5
-  m_Name: ResumeHUD
+  m_Name: HUDOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -630,6 +631,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &301177984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301177982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c66e714d1fc7764abb36613ac9a00f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &317887309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1058,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 680040529}
+      - m_Target: {fileID: 1928452755}
         m_TargetAssemblyTypeName: SettingsWindow, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -2105,7 +2118,6 @@ GameObject:
   - component: {fileID: 680040526}
   - component: {fileID: 680040528}
   - component: {fileID: 680040527}
-  - component: {fileID: 680040529}
   m_Layer: 5
   m_Name: SettingsBox
   m_TagString: Untagged
@@ -2174,26 +2186,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680040525}
   m_CullTransparentMesh: 1
---- !u!114 &680040529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680040525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 761d91176e2b7234684d0a6def9fee3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainHud: {fileID: 1106043775}
-  gameSaver: {fileID: 1280771375}
-  audioController: {fileID: 848296558}
-  masterSlider: {fileID: 1961130003}
-  musicSlider: {fileID: 1129099587}
-  sfxSlider: {fileID: 908646121}
-  deleteAllDataButton: {fileID: 1636362043}
-  deleteAllDataButtonText: {fileID: 494240214}
 --- !u!1 &735854377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,7 +3180,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 680040529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsWindow, Assembly-CSharp
         m_MethodName: OnSFXVolumeChange
         m_Mode: 0
@@ -3615,11 +3607,12 @@ MonoBehaviour:
   peanutText: {fileID: 530365827}
   scoreMultiplierText: {fileID: 1827939590}
   gameMode: {fileID: 1860627605}
-  hudOverlay: {fileID: 301177982}
-  pauseOverlay: {fileID: 1805681608}
-  startGameOverlay: {fileID: 1585067358}
-  settingsOverlay: {fileID: 1928452753}
   audioController: {fileID: 1992745766}
+  overlays:
+  - {fileID: 1805681610}
+  - {fileID: 1585067360}
+  - {fileID: 1928452755}
+  - {fileID: 301177984}
 --- !u!1 &1129099585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3711,7 +3704,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 680040529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsWindow, Assembly-CSharp
         m_MethodName: OnMusicVolumeChange
         m_Mode: 0
@@ -5084,9 +5077,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1106043775}
-        m_TargetAssemblyTypeName: MainHUD, Assembly-CSharp
-        m_MethodName: ShowSettingsOverlay
+      - m_Target: {fileID: 1585067360}
+        m_TargetAssemblyTypeName: StartGameOverlay, Assembly-CSharp
+        m_MethodName: ShowSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5145,7 +5138,7 @@ GameObject:
   - component: {fileID: 1585067359}
   - component: {fileID: 1585067360}
   m_Layer: 5
-  m_Name: StartHUD
+  m_Name: StartOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5185,6 +5178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMode: {fileID: 1860627605}
+  mainHud: {fileID: 1106043775}
   highestScoreText: {fileID: 1970190787}
   lastScoreText: {fileID: 1251119984}
   totalCherriesText: {fileID: 538081374}
@@ -5273,7 +5267,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 680040529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsWindow, Assembly-CSharp
         m_MethodName: DeleteAllData
         m_Mode: 1
@@ -5766,8 +5760,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1805681609}
+  - component: {fileID: 1805681610}
   m_Layer: 5
-  m_Name: PauseHUD
+  m_Name: PauseOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5795,6 +5790,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1805681610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805681608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffae4ef1e1d638b4c8198e5c1d03de93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1827939589
 GameObject:
   m_ObjectHideFlags: 0
@@ -6026,8 +6033,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1928452754}
+  - component: {fileID: 1928452755}
   m_Layer: 5
-  m_Name: SettingsHUD
+  m_Name: SettingsOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6054,6 +6062,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1928452755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928452753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d91176e2b7234684d0a6def9fee3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainHud: {fileID: 1106043775}
+  gameSaver: {fileID: 1280771375}
+  audioController: {fileID: 848296558}
+  masterSlider: {fileID: 1961130003}
+  musicSlider: {fileID: 1129099587}
+  sfxSlider: {fileID: 908646121}
+  deleteAllDataButton: {fileID: 1636362043}
+  deleteAllDataButtonText: {fileID: 494240214}
 --- !u!1 &1935095991
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,7 +6274,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 680040529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsWindow, Assembly-CSharp
         m_MethodName: OnMasterVolumeChange
         m_Mode: 0

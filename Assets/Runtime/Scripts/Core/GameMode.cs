@@ -85,7 +85,7 @@ public class GameMode : MonoBehaviour
     private void SetWwaitForStartGameState()
     {
         player.enabled = false;
-        mainHUD.ShowStartOverlay();
+        mainHUD.ShowOverlay<StartGameOverlay>();
         musicPlayer.PlayStartMenuMusic();
     }
 

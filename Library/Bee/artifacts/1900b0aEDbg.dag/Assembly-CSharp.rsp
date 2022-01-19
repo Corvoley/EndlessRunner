@@ -384,10 +384,13 @@
 "Assets/Runtime/Scripts/Player/PlayerAudioController.cs"
 "Assets/Runtime/Scripts/Player/PlayerCollision.cs"
 "Assets/Runtime/Scripts/Player/PlayerController.cs"
+"Assets/Runtime/Scripts/UI/HUDOverlay.cs"
 "Assets/Runtime/Scripts/UI/MainHUD.cs"
+"Assets/Runtime/Scripts/UI/PauseOverlay.cs"
 "Assets/Runtime/Scripts/UI/SettingsWindow.cs"
 "Assets/Runtime/Scripts/UI/StartGameOverlay.cs"
 "Assets/Runtime/Scripts/UI/UiAudioController.cs"
+"Assets/Runtime/Scripts/UI/UIOverlay.cs"
 -langversion:9.0
 
 /deterministic
