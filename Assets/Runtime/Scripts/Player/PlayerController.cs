@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private PlayerAudioController audioController;
     [SerializeField] private Obstacle obstacle;
+    
 
     [Header("Moviment")]
     [SerializeField] private float horizontalSpeed = 15;
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         initialPosition = transform.position;
         StopRoll();
+        
     }
 
     void Update()

@@ -9,7 +9,7 @@ public abstract class Collectable : MonoBehaviour , IPlayerCollisionReact
     [SerializeField] private GameObject model;
 
     protected abstract void ExecuteCollectableBehaviour(in PlayerCollisionInfo collisionInfo);
-    public void OnPickedUp(in PlayerCollisionInfo collisionInfo)
+    public void OnPickedUp(PlayerCollisionInfo collisionInfo)
     {
         
         AudioSource audioSource = GetComponent<AudioSource>();

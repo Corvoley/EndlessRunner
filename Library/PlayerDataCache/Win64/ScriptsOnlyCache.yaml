@@ -3,22 +3,34 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AudioController
     - CameraFollow
-    - Collectable
+    - CollectableCherry
     - CollectableLineSpawner
+    - CollectablePeanut
     - DecorationSpawner
     - EndlessTrackGenerator
     - GameMode
     - GameSaver
+    - HUDOverlay
     - JumpAnimationState
     - MainHUD
+    - MoveSideToSideAnimationState
     - MusicPlayer
     - Obstacle
     - ObstacleDecoration
+    - ObstacleDecorationMovable
+    - ObstacleMovable
     - ObstacleSpawner
+    - PauseOverlay
     - PlayerAnimationController
     - PlayerAudioController
     - PlayerCollision
     - PlayerController
+    - PowerUpBehaviourInvincible
+    - PowerUpBehaviourMagnet
+    - PowerUpBehaviourScoreMultiplier
+    - PowerUpInvincible
+    - PowerUpMagnet
+    - PowerUpScoreMultiplier
     - RollAnimationState
     - SettingsWindow
     - StartGameOverlay
@@ -97,6 +109,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
+    - Class: 75
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -118,89 +132,113 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1618}
+      Script: {instanceID: 1660}
     - Class: 114
-      Script: {instanceID: 2140}
+      Script: {instanceID: 1696}
     - Class: 114
-      Script: {instanceID: 2182}
+      Script: {instanceID: 2208}
     - Class: 114
-      Script: {instanceID: 2188}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2378}
+      Script: {instanceID: 2258}
     - Class: 114
-      Script: {instanceID: 2394}
+      Script: {instanceID: 2456}
     - Class: 114
-      Script: {instanceID: 2396}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2616}
+      Script: {instanceID: 2474}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2708}
     - Class: 114
-      Script: {instanceID: 2818}
+      Script: {instanceID: 2710}
     - Class: 114
-      Script: {instanceID: 3000}
+      Script: {instanceID: 2910}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 2914}
     - Class: 114
-      Script: {instanceID: 3226}
+      Script: {instanceID: 3098}
     - Class: 114
-      Script: {instanceID: 3526}
+      Script: {instanceID: 3204}
     - Class: 114
-      Script: {instanceID: 4080}
+      Script: {instanceID: 3294}
     - Class: 114
-      Script: {instanceID: 4326}
+      Script: {instanceID: 3342}
     - Class: 114
-      Script: {instanceID: 4334}
+      Script: {instanceID: 3352}
     - Class: 114
-      Script: {instanceID: 4582}
+      Script: {instanceID: 3662}
     - Class: 114
-      Script: {instanceID: 4722}
+      Script: {instanceID: 3670}
     - Class: 114
-      Script: {instanceID: 4724}
+      Script: {instanceID: 4196}
     - Class: 114
-      Script: {instanceID: 4854}
+      Script: {instanceID: 4248}
     - Class: 114
-      Script: {instanceID: 4928}
+      Script: {instanceID: 4312}
     - Class: 114
-      Script: {instanceID: 5008}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 5068}
+      Script: {instanceID: 4526}
     - Class: 114
-      Script: {instanceID: 5246}
+      Script: {instanceID: 4686}
     - Class: 114
-      Script: {instanceID: 5560}
+      Script: {instanceID: 4788}
     - Class: 114
-      Script: {instanceID: 5714}
+      Script: {instanceID: 4934}
     - Class: 114
-      Script: {instanceID: 6028}
+      Script: {instanceID: 4936}
     - Class: 114
-      Script: {instanceID: 6162}
+      Script: {instanceID: 5072}
+    - Class: 114
+      Script: {instanceID: 5150}
+    - Class: 114
+      Script: {instanceID: 5232}
+    - Class: 114
+      Script: {instanceID: 5294}
+    - Class: 114
+      Script: {instanceID: 5480}
+    - Class: 114
+      Script: {instanceID: 5804}
+    - Class: 114
+      Script: {instanceID: 5960}
+    - Class: 114
+      Script: {instanceID: 6020}
     - Class: 114
       Script: {instanceID: 6282}
     - Class: 114
       Script: {instanceID: 6416}
     - Class: 114
-      Script: {instanceID: 6574}
+      Script: {instanceID: 6542}
     - Class: 114
-      Script: {instanceID: 6884}
+      Script: {instanceID: 6680}
     - Class: 114
-      Script: {instanceID: 6948}
+      Script: {instanceID: 6686}
     - Class: 114
-      Script: {instanceID: 6984}
+      Script: {instanceID: 6700}
     - Class: 114
-      Script: {instanceID: 7042}
+      Script: {instanceID: 6854}
     - Class: 114
-      Script: {instanceID: 7322}
+      Script: {instanceID: 7070}
     - Class: 114
-      Script: {instanceID: 7636}
+      Script: {instanceID: 7128}
     - Class: 114
-      Script: {instanceID: 35322}
+      Script: {instanceID: 7184}
     - Class: 114
-      Script: {instanceID: 62160}
+      Script: {instanceID: 7254}
     - Class: 114
-      Script: {instanceID: 62200}
+      Script: {instanceID: 7294}
     - Class: 114
-      Script: {instanceID: 62218}
+      Script: {instanceID: 7308}
+    - Class: 114
+      Script: {instanceID: 7326}
+    - Class: 114
+      Script: {instanceID: 7358}
+    - Class: 114
+      Script: {instanceID: 7658}
+    - Class: 114
+      Script: {instanceID: 7896}
+    - Class: 114
+      Script: {instanceID: 7994}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -210,6 +248,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -242,6 +284,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: a6df7c5399ad9a27189297366a3d0f7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ObstacleDecorationMovable
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -310,7 +358,7 @@ ScriptsOnlyBuild:
     className: UnityOnTriggerEnterMessageListener
   - hash:
       serializedVersion: 2
-      Hash: ba1f5c847f670599ea7aee1e7c9d8018
+      Hash: 450356f45636348004fbfdff95a017b9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameMode
@@ -382,6 +430,12 @@ ScriptsOnlyBuild:
     className: EventSystem
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HUDOverlay
+  - hash:
+      serializedVersion: 2
       Hash: fe64a45214940b510a0ec79c96d43498
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -394,7 +448,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: a74405a4829a834d107a0c6e072719ed
+      Hash: c822eec45bd7c5f6d7c8a2d82a6feb07
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
@@ -430,7 +484,7 @@ ScriptsOnlyBuild:
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
-      Hash: 85a9601c1ee0a85083d0c82b0ffdd968
+      Hash: 651c39d15d4acb849b976381f32f2e02
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CollectableLineSpawner
@@ -448,7 +502,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: 34746f5ad4a8189141ddf65a40069ea1
+      Hash: 8fbc134fd506d97c845cf2b715231396
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: InputField
@@ -514,6 +568,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseDownMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 0139ccc6242f5ad688e010522b48907e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartGameOverlay
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -538,6 +598,12 @@ ScriptsOnlyBuild:
     className: WorldCurver
   - hash:
       serializedVersion: 2
+      Hash: 1116e033bf5bf88c29fa72440a6a318e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PowerUpBehaviourMagnet
+  - hash:
+      serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -553,7 +619,7 @@ ScriptsOnlyBuild:
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
     assemblyName: Unity.VisualScripting.Flow.dll
     namespaceName: Unity.VisualScripting
-    className: FlowMachine
+    className: ScriptMachine
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -584,6 +650,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshPro
+  - hash:
+      serializedVersion: 2
+      Hash: 3f0f86a36d466600c184d9a5fbfa74da
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ObstacleMovable
   - hash:
       serializedVersion: 2
       Hash: 71f7f12b8d0f4fd73590db8bcb6d453c
@@ -664,6 +736,12 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: bc558132b9290b9c2f0f56ac4e18fe50
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CollectablePeanut
+  - hash:
+      serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -686,6 +764,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnJointBreak2DMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: c160f7c8e3a4dd35bb9d39a0ce287832
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PowerUpBehaviourScoreMultiplier
   - hash:
       serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
@@ -712,22 +796,28 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: bc558132b9290b9c2f0f56ac4e18fe50
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Collectable
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCancelMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 18a21ab268a5f8f894c268c91e61c4e2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioController
+  - hash:
+      serializedVersion: 2
       Hash: 63d7b9b64a11859f416d72ba9a3c3fec
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: ScreenSpaceReflections
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSaver
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -752,6 +842,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: SceneVariables
+  - hash:
+      serializedVersion: 2
+      Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
+    assemblyName: Unity.VisualScripting.Core.dll
+    namespaceName: Unity.VisualScripting
+    className: MacroScriptableObject
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -856,7 +952,7 @@ ScriptsOnlyBuild:
     className: DepthOfField
   - hash:
       serializedVersion: 2
-      Hash: cc0bf3b1dd582d621da9cee85b1eccf2
+      Hash: 14ffc7dd92f4bdea913ddf755ef41c58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObstacleDecoration
@@ -935,6 +1031,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PauseOverlay
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseUpAsButtonMessageListener
@@ -1006,6 +1108,12 @@ ScriptsOnlyBuild:
     className: UnityOnPointerEnterMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 7bade0b691fbefbdf90cd7696abbe56e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PowerUpMagnet
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1016,6 +1124,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RollAnimationState
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoveSideToSideAnimationState
   - hash:
       serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
@@ -1090,10 +1204,22 @@ ScriptsOnlyBuild:
     className: UnityOnSubmitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 7c91704327e88b7a5130cb3e93e4491a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PowerUpBehaviourInvincible
+  - hash:
+      serializedVersion: 2
       Hash: a81d4c2c1cf3ad164d277d927a193679
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 7bade0b691fbefbdf90cd7696abbe56e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PowerUpInvincible
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1108,7 +1234,7 @@ ScriptsOnlyBuild:
     className: JumpAnimationState
   - hash:
       serializedVersion: 2
-      Hash: 57cb2dcb1e6cb3fd4af76fa7e842e802
+      Hash: 50e145fd18004bfd702155766f60e7eb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainHUD
@@ -1120,10 +1246,22 @@ ScriptsOnlyBuild:
     className: UnityOnMoveMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 0fb8f9308fce8e43aeaa284307bcdb07
+      Hash: 3639c79c4b20f347c2bc49c8b217b33d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 37c718fdea1b3d6b4c57f7faa08171a0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsWindow
+  - hash:
+      serializedVersion: 2
+      Hash: bc558132b9290b9c2f0f56ac4e18fe50
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CollectableCherry
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1198,6 +1336,12 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: c6da35522b8f2d103fa8a658e20b50f8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PowerUpScoreMultiplier
+  - hash:
+      serializedVersion: 2
       Hash: d0844129a302c199a889814376f5bdb5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1232,30 +1376,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 18a21ab268a5f8f894c268c91e61c4e2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AudioController
-  - hash:
-      serializedVersion: 2
-      Hash: 37c718fdea1b3d6b4c57f7faa08171a0
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SettingsWindow
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameSaver
-  - hash:
-      serializedVersion: 2
-      Hash: e1589a2272414d8a6a46a2738b66fc60
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: StartGameOverlay
   platform: 19
   scenePathNames:
   - Assets/Runtime/Scenes/Main.unity

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,12 +53,16 @@
     <UnityVersion>2021.2.3f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Runtime\Scripts\Level\ObstacleDecorationMovable.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\ObstacleSpawn.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerAudioController.cs" />
     <Compile Include="Assets\Runtime\Scripts\Core\GameMode.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerAnimationController.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\Obstacle.cs" />
+    <Compile Include="Assets\Runtime\Scripts\UI\HUDOverlay.cs" />
     <Compile Include="Assets\Runtime\Scripts\Collectables\CollectableLineSpawner.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\ObstacleSpawner.cs" />
     <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUp.cs" />
@@ -78,6 +82,7 @@
     <Compile Include="Assets\Runtime\Scripts\Level\ObstacleDecoration.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerCollision.cs" />
     <Compile Include="Assets\Low Poly Fruits\resources\fruits_tester.cs" />
+    <Compile Include="Assets\Runtime\Scripts\UI\PauseOverlay.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\TrackSegment.cs" />
     <Compile Include="Assets\Runtime\Scripts\UI\UiAudioController.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerAnimationConstants.cs" />
@@ -95,11 +100,9 @@
     <Compile Include="Assets\Runtime\Scripts\Animation\ObstacleAnimationConstants.cs" />
     <Compile Include="Assets\Runtime\Scripts\Core\GameTags.cs" />
     <Compile Include="Assets\Runtime\Scripts\Audio\AudioUtility.cs" />
+    <Compile Include="Assets\Runtime\Scripts\UI\UIOverlay.cs" />
     <Compile Include="Assets\Runtime\Scripts\Collectables\PowerUps\PowerUpScoreMultiplier.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\DecorationSpawner.cs" />
-    <Compile Include="Assets\Runtime\Scripts\UI\UIOverlay.cs" />
-    <Compile Include="Assets\Runtime\Scripts\UI\HUDOverlay.cs" />
-    <Compile Include="Assets\Runtime\Scripts\UI\PauseOverlay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Runtime\Shaders\ToonShading\Shaders\ToonBasicOutline.shader" />
