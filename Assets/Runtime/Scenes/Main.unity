@@ -3180,7 +3180,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1928452755}
         m_TargetAssemblyTypeName: SettingsWindow, Assembly-CSharp
         m_MethodName: OnSFXVolumeChange
         m_Mode: 0
@@ -3704,7 +3704,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1928452755}
         m_TargetAssemblyTypeName: SettingsWindow, Assembly-CSharp
         m_MethodName: OnMusicVolumeChange
         m_Mode: 0
@@ -5267,7 +5267,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1928452755}
         m_TargetAssemblyTypeName: SettingsWindow, Assembly-CSharp
         m_MethodName: DeleteAllData
         m_Mode: 1
@@ -6077,6 +6077,7 @@ MonoBehaviour:
   mainHud: {fileID: 1106043775}
   gameSaver: {fileID: 1280771375}
   audioController: {fileID: 848296558}
+  startGameOverlay: {fileID: 1585067360}
   masterSlider: {fileID: 1961130003}
   musicSlider: {fileID: 1129099587}
   sfxSlider: {fileID: 908646121}
@@ -6274,7 +6275,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1928452755}
         m_TargetAssemblyTypeName: SettingsWindow, Assembly-CSharp
         m_MethodName: OnMasterVolumeChange
         m_Mode: 0
@@ -6480,7 +6481,7 @@ AudioSource:
   m_GameObject: {fileID: 1992745764}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
+  OutputAudioMixerGroup: {fileID: -1450324270061248655, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -7331,6 +7332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 55115461236429490, guid: 330264cf38912054ca69f4eba97add99, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3352555518863948854, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
     - target: {fileID: 55115461236429491, guid: 330264cf38912054ca69f4eba97add99, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -7443,7 +7448,7 @@ PrefabInstance:
     - target: {fileID: 7794306898535371087, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
+      objectReference: {fileID: -1450324270061248655, guid: c07e61c505e4dfe4b96c2d76721cda45, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
 --- !u!1001 &5473261709051742749

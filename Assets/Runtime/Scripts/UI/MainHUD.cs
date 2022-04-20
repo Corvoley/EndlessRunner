@@ -21,8 +21,6 @@ public class MainHUD : MonoBehaviour
     private void Awake()
     {
         ShowOverlay<HUDOverlay>();
-
-
     }
     private void LateUpdate()
     {

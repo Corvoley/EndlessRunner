@@ -7,6 +7,7 @@ public class SettingsWindow : UIOverlay
     [SerializeField] private MainHUD mainHud;
     [SerializeField] private GameSaver gameSaver;
     [SerializeField] private AudioController audioController;
+    [SerializeField] StartGameOverlay startGameOverlay;
 
     [Header("UI Elements")]
     [SerializeField] private Slider masterSlider;
@@ -57,5 +58,6 @@ public class SettingsWindow : UIOverlay
     public void DeleteAllData()
     {
         gameSaver.DeleteAllData();
+        gameSaver.ForceLoadGame();       
     }
 }

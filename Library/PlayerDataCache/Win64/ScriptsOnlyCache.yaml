@@ -1252,7 +1252,7 @@ ScriptsOnlyBuild:
     className: PlayerController
   - hash:
       serializedVersion: 2
-      Hash: 37c718fdea1b3d6b4c57f7faa08171a0
+      Hash: df63c40715f3b2cb7c65d1fc7b4ec0ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsWindow

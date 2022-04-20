@@ -87,7 +87,7 @@ public class GameSaver : MonoBehaviour
     }
 
     public void LoadGame()
-    {
+    {        
         if (IsLoaded)
         {
             return;
@@ -98,6 +98,11 @@ public class GameSaver : MonoBehaviour
 
         AudioPreferences = LoadAudioPreferencesFromFile(AudioPreferenceFilePath) ?? new AudioPreferences();
        
+    }
+    public void ForceLoadGame()
+    {       
+        CurrentSave = LoadGameDataFromFile(SaveGameFilePath) ?? new SaveGameData();
+        AudioPreferences = LoadAudioPreferencesFromFile(AudioPreferenceFilePath) ?? new AudioPreferences();
     }
 
     public void SaveAudioPreferences(AudioPreferences preferences)
