@@ -8,7 +8,6 @@ public class ObstacleMovable : Obstacle
     [SerializeField] private float speed = 10;
 
     private float positionT = 0;
-    public float LaneDistanceX => laneDistanceX;
     public float MoveSpeed => speed;
 
     public float SideToSideMoveTime => 1.0f / MoveSpeed;
