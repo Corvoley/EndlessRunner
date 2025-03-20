@@ -15,6 +15,7 @@ public abstract class PowerUpBehaviour : MonoBehaviour
         endTime = Time.time + duration;
         if (!wasActive)
         {
+            Debug.Log("Active? " + gameObject.activeInHierarchy);
             StartCoroutine(UpdateBehaviourCoroutine());
         }
     }
