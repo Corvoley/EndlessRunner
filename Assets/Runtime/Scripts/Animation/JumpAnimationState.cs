@@ -11,7 +11,6 @@ public class JumpAnimationState : StateMachineBehaviour
         AnimatorClipInfo[] clips = animator.GetNextAnimatorClipInfo(layerIndex);
         if (clips.Length > 0)
         {
-            Debug.Log(clips[0].clip.name);
             AnimatorClipInfo jumpClipInfo = clips[0];
             //olha a duracao do pulo do gameplay
             //TODO: Assumindo que o PlayerController esta no objeto pai. Resolver isso.
