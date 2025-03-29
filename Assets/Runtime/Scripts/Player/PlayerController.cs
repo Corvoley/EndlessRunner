@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private PlayerAudioController audioController;
     [SerializeField] private Obstacle obstacle;
-    
+    [SerializeField] private SwipeDetection swipeDetection;
+
 
     [Header("Moviment")]
     [SerializeField] private float horizontalSpeed = 15;
@@ -45,7 +46,26 @@ public class PlayerController : MonoBehaviour
     {
         initialPosition = transform.position;
         StopRoll();
-        
+
+    }
+    private void Start()
+    {
+        swipeDetection = GetComponent<SwipeDetection>();
+       
+    }
+    private void OnEnable()
+    {
+        swipeDetection.OnSwipeRight += MoveRight;
+        swipeDetection.OnSwipeLeft += MoveLeft;
+        swipeDetection.OnSwipeUp += Jump;
+        swipeDetection.OnSwipeDown += Roll;
+    }
+    private void OnDisable()
+    {
+        swipeDetection.OnSwipeRight -= MoveRight;
+        swipeDetection.OnSwipeLeft -= MoveLeft;
+        swipeDetection.OnSwipeUp -= Jump;
+        swipeDetection.OnSwipeDown -= Roll;
     }
 
     void Update()
@@ -61,6 +81,30 @@ public class PlayerController : MonoBehaviour
 
         transform.position = position;
 
+    }
+
+    private void MoveRight()
+    {
+        targetPositionX += laneDistanceX;        
+    }
+    private void MoveLeft()
+    {
+        targetPositionX -= laneDistanceX;        
+    }
+    private void Jump()
+    {
+        if (CanJump)
+        {
+            StartJump();
+        }
+    }
+    private void Roll()
+    {
+        if (CanRoll)
+        {
+            StartRoll();
+        }
+       
     }
 
     private void ProcessInput()

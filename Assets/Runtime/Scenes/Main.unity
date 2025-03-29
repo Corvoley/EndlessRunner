@@ -2193,6 +2193,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680040525}
   m_CullTransparentMesh: 1
+--- !u!1 &733820570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1039976784133768169, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
+  m_PrefabInstance: {fileID: 1039976785481617571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &735854377
 GameObject:
   m_ObjectHideFlags: 0
@@ -4671,7 +4676,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1039976784133768168, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
   m_PrefabInstance: {fileID: 1039976785481617571}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 733820570}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 281864f092458e747b95614ce9126ecb, type: 3}
@@ -4800,7 +4805,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1039976784133768174, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
   m_PrefabInstance: {fileID: 1039976785481617571}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 733820570}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 132dbe83e5f1aa641b137325cf34895d, type: 3}
@@ -7288,6 +7293,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1039976784133768172, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
   m_PrefabInstance: {fileID: 1039976785481617571}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2147172408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733820570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf868646c9c127748992bbf2dcd475ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSwipeTime: 0.5
+  minSwipeDistance: 100
+  swiping: 0
+  swipeAngle: 0
 --- !u!1001 &55115460786925330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7373,6 +7394,10 @@ PrefabInstance:
       propertyPath: obstacle
       value: 
       objectReference: {fileID: 1866883507473763490, guid: 9dbe8e8a22d8d4b4aab07557037dac63, type: 3}
+    - target: {fileID: 1039976784133768168, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
+      propertyPath: swipeDetection
+      value: 
+      objectReference: {fileID: 2147172408}
     - target: {fileID: 1039976784133768169, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
       propertyPath: m_Name
       value: Player
@@ -7446,7 +7471,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1039976784133768172, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1352515571}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1039976784133768169, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2147172408}
   m_SourcePrefab: {fileID: 100100000, guid: 740e8ed84f438b24ca8b6f85b7659234, type: 3}
 --- !u!1001 &5473261709051742749
 PrefabInstance:

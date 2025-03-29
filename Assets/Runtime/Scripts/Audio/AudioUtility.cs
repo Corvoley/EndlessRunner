@@ -12,6 +12,7 @@ public static class AudioUtility
         }
         else
         {
+            source.pitch = Random.Range(0.98f, 1.03f);
             source.clip = clip;
             source.loop = false;
             source.Play();
@@ -26,6 +27,7 @@ public static class AudioUtility
         }
         else
         {
+            source.pitch = 1f;
             source.clip = clip;
             source.loop = false;
             source.Play();
