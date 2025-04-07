@@ -55,6 +55,8 @@ public class GameMode : MonoBehaviour
 
     private void Awake()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
         player.PlayerDeathEvent += OnPlayerDeath;
         gameSaver.LoadGame();
         SetWwaitForStartGameState();

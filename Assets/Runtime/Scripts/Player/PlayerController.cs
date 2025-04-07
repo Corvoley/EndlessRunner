@@ -48,11 +48,7 @@ public class PlayerController : MonoBehaviour
         StopRoll();
 
     }
-    private void Start()
-    {
-        swipeDetection = GetComponent<SwipeDetection>();
-       
-    }
+
     private void OnEnable()
     {
         swipeDetection.OnSwipeRight += MoveRight;
