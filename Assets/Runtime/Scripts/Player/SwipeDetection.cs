@@ -71,24 +71,24 @@ public class SwipeDetection : MonoBehaviour
                 {
                     OnSwipeUp?.Invoke();
 
-                    Debug.Log("Up");
+                   // Debug.Log("Up");
                 }
                 else if (swipeAngle > 225f && swipeAngle <= 315f)
                 {
                     OnSwipeDown?.Invoke();
-                    Debug.Log("Down");
+                    //Debug.Log("Down");
                 }
                 else if (swipeAngle > 135f && swipeAngle <= 225f)
                 {
                     OnSwipeLeft?.Invoke();
 
-                    Debug.Log("Left");
+                   // Debug.Log("Left");
                 }
                 else if ((swipeAngle > 315f && swipeAngle <= 360f) || (swipeAngle >= 0f && swipeAngle <= 45f))
                 {
                     OnSwipeRight?.Invoke();
 
-                    Debug.Log("Right");
+                   // Debug.Log("Right");
                 }
 
 

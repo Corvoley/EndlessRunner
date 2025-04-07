@@ -25,6 +25,10 @@ public class PlayerAnimationController : MonoBehaviour
     private void OnPlayerDeath()
     {
         animator.SetTrigger(PlayerAnimationConstants.DieTrigger);
+    }    
+    public void PlayIdleAnimation()
+    {
+        animator.SetTrigger(PlayerAnimationConstants.Restart);
     }
 
     public IEnumerator PlayStartGameAnimation()

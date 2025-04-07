@@ -57,6 +57,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Setti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.AI.Navigation.Updater", "Unity.AI.Navigation.Updater.csproj", "{6F368996-A693-379D-18A1-55BA88391F00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMobileAds.Editor", "GoogleMobileAds.Editor.csproj", "{DBD22F86-146D-8FAD-45B9-4FEB2365A784}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Sprite.Editor", "Unity.2D.Sprite.Editor.csproj", "{45AE2FD0-051D-CBC8-8308-4556382FBCA2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Multiplayer.Center.Common", "Unity.Multiplayer.Center.Common.csproj", "{8B9931E2-561F-60BD-C686-DFBC690607ED}"
@@ -213,6 +215,10 @@ Global
 		{6F368996-A693-379D-18A1-55BA88391F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F368996-A693-379D-18A1-55BA88391F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F368996-A693-379D-18A1-55BA88391F00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD22F86-146D-8FAD-45B9-4FEB2365A784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD22F86-146D-8FAD-45B9-4FEB2365A784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD22F86-146D-8FAD-45B9-4FEB2365A784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD22F86-146D-8FAD-45B9-4FEB2365A784}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45AE2FD0-051D-CBC8-8308-4556382FBCA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45AE2FD0-051D-CBC8-8308-4556382FBCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45AE2FD0-051D-CBC8-8308-4556382FBCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU

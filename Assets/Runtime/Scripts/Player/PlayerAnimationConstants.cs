@@ -8,4 +8,5 @@ public static class PlayerAnimationConstants
     public const string RollSpeedMultiplier = "RollMultiplier";
 
     public const string StartGameAnimationStateName = "StartRun";
+    public const string Restart = "Restart";
 }

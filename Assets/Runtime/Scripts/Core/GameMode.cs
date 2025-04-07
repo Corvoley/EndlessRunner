@@ -22,14 +22,16 @@ public class GameMode : MonoBehaviour
     [SerializeField] private float maxPlayerSpeed = 20;
     [SerializeField] private float timeToMaxSpeedSeconds = 300;
     private float startGameTime;
+    private bool canRetry = true;
 
 
     public SaveGameData CurrentSave => gameSaver.CurrentSave;
     public AudioPreferences AudioPreferences => gameSaver.AudioPreferences;
 
     public int TemporaryScoreMultiplier
-    { get => temporaryScoreMultiplier;
-        set => temporaryScoreMultiplier = Mathf.Max(1, value);      
+    {
+        get => temporaryScoreMultiplier;
+        set => temporaryScoreMultiplier = Mathf.Max(1, value);
     }
     public int temporaryScoreMultiplier = 1;
     public float baseScoreMultiplier = 1;
@@ -59,32 +61,35 @@ public class GameMode : MonoBehaviour
         Application.targetFrameRate = 60;
         player.PlayerDeathEvent += OnPlayerDeath;
         gameSaver.LoadGame();
-        SetWwaitForStartGameState();
+        SetWaitForStartGameState();
     }
 
-   
+    private void Start()
+    {
+        AdsManager.Instance.OnIntertistialAdClosed += RetryGame;
+    }
     private void Update()
     {
-        DifficultScale();        
+        DifficultScale();
     }
 
     private void DifficultScale()
-    {                 
+    {
 
         if (isGameRunning)
         {
             float timePercent = (Time.time - startGameTime) / timeToMaxSpeedSeconds;
-             player.ForwardSpeed = Mathf.Lerp(startPlayerSpeed, maxPlayerSpeed, timePercent);
+            player.ForwardSpeed = Mathf.Lerp(startPlayerSpeed, maxPlayerSpeed, timePercent);
 
             float extraScoreMultiplier = 1 + timePercent;
             cherriesTotalScore = (CherriesCount * cherriesScoreValue);
-            score += ( baseScoreMultiplier * temporaryScoreMultiplier * extraScoreMultiplier * player.ForwardSpeed * Time.deltaTime);
-            
+            score += (baseScoreMultiplier * temporaryScoreMultiplier * extraScoreMultiplier * player.ForwardSpeed * Time.deltaTime);
+
         }
     }
-    
 
-    private void SetWwaitForStartGameState()
+
+    private void SetWaitForStartGameState()
     {
         player.enabled = false;
         mainHUD.ShowOverlay<StartGameOverlay>();
@@ -93,12 +98,35 @@ public class GameMode : MonoBehaviour
 
     private void OnPlayerDeath()
     {
-        OnGameOver();
+        StartCoroutine(EndGameCor());
+        if (canRetry)
+        {
+            mainHUD.RetryGame();
+
+        }
+        else
+        {
+            GameOver();
+        }
     }
-    public void OnGameOver()
+    public void RetryGame()
     {
-        isGameRunning = false;
-        player.ForwardSpeed = 0;
+        canRetry = false;
+        StartCoroutine(RetryGameCor());
+
+    }
+    private IEnumerator RetryGameCor()
+    {
+        playerAnimationController.PlayIdleAnimation();
+        musicPlayer.PlayMainTrackMusic();
+        yield return StartCoroutine(mainHUD.PlayStartGameCountdown(startGameCountdown));
+        yield return StartCoroutine(playerAnimationController.PlayStartGameAnimation());
+        player.enabled = true;
+        player.ForwardSpeed = startPlayerSpeed;
+        isGameRunning = true;
+    }
+    public void GameOver()
+    {
         gameSaver.SaveGame(new SaveGameData
         {
             HighestScore = Score > gameSaver.CurrentSave.HighestScore ? Score : gameSaver.CurrentSave.HighestScore,
@@ -108,14 +136,21 @@ public class GameMode : MonoBehaviour
         });
         StartCoroutine(ReloadGameCoroutine());
     }
-
+    private IEnumerator EndGameCor()
+    {
+        isGameRunning = false;
+        player.ForwardSpeed = 0;
+        player.enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        musicPlayer.PlayDeathTrackMusic();
+    }
     private IEnumerator ReloadGameCoroutine()
     {
-        yield return new WaitForSeconds(1);
-        musicPlayer.PlayDeathTrackMusic();
         yield return new WaitForSeconds(reloadGameDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+
 
     public void PauseGame()
     {
@@ -145,7 +180,7 @@ public class GameMode : MonoBehaviour
     public void IncreaseCherriesCount()
     {
         cherriesCount++;
-      
+
     }
 
     public void IncreasePeanutCount()

@@ -44,6 +44,11 @@ public class MainHUD : MonoBehaviour
         ShowOverlay<HUDOverlay>();
     }
 
+    public void RetryGame()
+    {
+        ShowOverlay<RetryOverlay>();
+    }
+
     public void ShowOverlay<T>() where T : UIOverlay
     {
         foreach (UIOverlay overlay in overlays)
