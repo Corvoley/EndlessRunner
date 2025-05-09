@@ -71,6 +71,28 @@ public class GameMode : MonoBehaviour
     private void Update()
     {
         DifficultScale();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGameRunning)
+            {
+               
+                if (Time.timeScale == 0)
+                {
+                    ExitGame();
+                }
+                else
+                {
+                    mainHUD.PauseGame();
+                    PauseGame();
+                }
+            }
+            else
+            {
+                ExitGame();
+            }
+
+
+        }
     }
 
     private void DifficultScale()
@@ -190,7 +212,14 @@ public class GameMode : MonoBehaviour
 
     public void ExitGame()
     {
+#if UNITY_EDITOR
+        // Application.Quit() does not work in the editor so
+        // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
+
     }
     private void OnDestroy()
     {
