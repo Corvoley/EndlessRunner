@@ -1140,14 +1140,14 @@ RectTransform:
   m_GameObject: {fileID: 382297279}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2386, y: 1.2386, z: 1.2386}
+  m_LocalScale: {x: 1.4028383, y: 1.4028383, z: 1.4028383}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1136262110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 226}
+  m_AnchoredPosition: {x: 0, y: 230}
   m_SizeDelta: {x: 676.2343, y: 169.0586}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382297281
@@ -5204,7 +5204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -219}
+  m_AnchoredPosition: {x: 0, y: -218}
   m_SizeDelta: {x: 555.0973, y: 169.292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1382606599
@@ -8463,6 +8463,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1410811757}
+    - target: {fileID: 5473261710550771336, guid: 13e6af26070c6914283530aa501293e8, type: 3}
+      propertyPath: canRetry
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5473261710550771336, guid: 13e6af26070c6914283530aa501293e8, type: 3}
       propertyPath: pauseHUD
       value: 

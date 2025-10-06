@@ -22,7 +22,7 @@ public class GameMode : MonoBehaviour
     [SerializeField] private float maxPlayerSpeed = 20;
     [SerializeField] private float timeToMaxSpeedSeconds = 300;
     private float startGameTime;
-    private bool canRetry = true;
+    [SerializeField] private bool canRetry = true;
 
 
     public SaveGameData CurrentSave => gameSaver.CurrentSave;
@@ -66,7 +66,7 @@ public class GameMode : MonoBehaviour
 
     private void Start()
     {
-        AdsManager.Instance.OnIntertistialAdClosed += RetryGame;
+         AdsManager.Instance.OnIntertistialAdClosed += RetryGame;
     }
     private void Update()
     {

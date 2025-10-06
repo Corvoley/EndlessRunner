@@ -105,19 +105,19 @@ public class PlayerController : MonoBehaviour
 
     private void ProcessInput()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             targetPositionX += laneDistanceX;
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             targetPositionX -= laneDistanceX;
         }
-        if (Input.GetKeyDown(KeyCode.W) && CanJump)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && CanJump)
         {
             StartJump();
         }
-        if (Input.GetKeyDown(KeyCode.S) && CanRoll)
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftControl)) && CanRoll)
         {
             StartRoll();
         }
