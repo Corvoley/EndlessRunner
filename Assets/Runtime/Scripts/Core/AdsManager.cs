@@ -9,7 +9,7 @@ public class AdsManager : MonoBehaviour
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/1033173712";
+    private string _adInterstitialUnitId = "ca-app-pub-4311989921598352/1918029395";
 #elif UNITY_IPHONE
     private string _adInterstitialUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
